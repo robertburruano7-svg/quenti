@@ -1,7 +1,5 @@
 import { FrameLogo, Link } from "@studyapp/components";
-import { GithubIcon, XIcon } from "@studyapp/components/icons";
-import { SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
-import { WEBSITE_URL } from "@studyapp/lib/constants/url";
+import { GithubIcon } from "@studyapp/components/icons";
 
 import {
   Box,
@@ -48,7 +46,7 @@ export const Footer = () => {
         <Stack spacing="8">
           <Flex justifyContent="space-between" alignItems="center">
             <HStack spacing="3">
-              <Link href={WEBSITE_URL}>
+              <Link href="/">
                 <HStack>
                   <FrameLogo width="18px" height="18px" />
                   <Heading size="md" className="notranslate">
@@ -64,7 +62,7 @@ export const Footer = () => {
                 }}
               >
                 <IconCopyright size={12} />
-                <Text fontSize="sm">2024</Text>
+                <Text fontSize="sm">{new Date().getFullYear()}</Text>
               </HStack>
               <Box
                 color="gray.300"
@@ -114,7 +112,8 @@ export const Footer = () => {
             </HStack>
           </Flex>
           <HStack
-            justifyContent="space-between"
+            justifyContent={{ base: "space-between", lg: "flex-start" }}
+            spacing={{ base: "0", lg: "6" }}
             w="full"
             display={{
               base: "grid",
@@ -125,23 +124,10 @@ export const Footer = () => {
             <Box display={{ base: "none", lg: "inherit" }}>
               <SocialLinksContainer />
             </Box>
-            <FooterLink href={WEBSITE_URL} text="Home" />
-            <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
             <FooterLink
               href="https://github.com/robertburruano7-svg/quenti"
               text="Open source"
             />
-            <FooterLink href="https://status.studyapp.example" text="Status" />
-            <FooterLink
-              href={`${WEBSITE_URL}/organizations`}
-              text="Organizations"
-            />
-            <FooterLink
-              href={`mailto:${SUPPORT_EMAIL}`}
-              text="Contact support"
-            />
-            <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
-            <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
             <FooterLink
               href="https://github.com/robertburruano7-svg/quenti/blob/main/LICENSE"
               text="License"
@@ -165,9 +151,6 @@ const SocialLinksContainer = () => {
     <HStack spacing="3">
       <SocialLink href="https://github.com/robertburruano7-svg">
         <GithubIcon w="4" h="4" />
-      </SocialLink>
-      <SocialLink href="https://twitter.com/studyapp">
-        <XIcon w="4" h="4" />
       </SocialLink>
     </HStack>
   );

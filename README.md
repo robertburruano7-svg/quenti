@@ -26,7 +26,7 @@ Get up and running by following these steps.
 
 ### Prerequisites
 
-- Node.js 18.x
+- Node.js 20.x or newer
 - MySQL
 - Bun
 - Docker and docker-compose _(recommended)_
@@ -101,6 +101,26 @@ bun start
 ```
 
 Navigate to http://localhost:3000 and Studyapp should be up and running!
+
+## Flashcards in the repo
+
+Cards live in the database, but chosen sets can be tracked as files under
+`seeds/sets/` and synced in either direction:
+
+```sh
+bun run sets:push          # repo files  ->  database
+bun run sets:pull          # database    ->  repo files
+```
+
+See [seeds/README.md](./seeds/README.md) for the file format and flags. For a
+one-off import with no files involved, the set editor's Import button accepts
+tab-separated cards pasted directly.
+
+## Hosting
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for deploying the app to Vercel: the
+required environment variables, the Google OAuth setup, and which features stay
+off until you add optional service credentials.
 
 ## Private submodules
 

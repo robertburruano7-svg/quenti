@@ -31,6 +31,8 @@
     "generate-org-students": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/generate-org-students.ts",
     "generate-assignment-submissions": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/generate-assignment-submissions.ts",
     "join-class-students": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/join-class-students.ts",
+    "sets:push": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/sets-push.ts",
+    "sets:pull": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/sets-pull.ts",
     "stripe-webhook": "stripe listen --forward-to localhost:3000/api/stripe/webhook"
   },
   "dependencies": {
@@ -60,7 +62,7 @@
     "schema": "packages/prisma/schema.prisma"
   },
   "engines": {
-    "node": ">=18.x",
+    "node": ">=20.x",
     "npm": ">=7.0.0"
   },
   "packageManager": "bun@1.0.2",
