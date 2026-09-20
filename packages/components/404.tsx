@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
-
 import {
   Box,
   Button,
@@ -178,22 +176,6 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
           <HStack mt={{ base: 0, sm: "8" }}>
             <Button as={Link} href="/" variant="ghost" colorScheme="gray">
               Home
-            </Button>
-            <Button
-              as={Link}
-              href="https://status.studyapp.example"
-              variant="ghost"
-              colorScheme="gray"
-            >
-              System status
-            </Button>
-            <Button
-              as={Link}
-              href={`mailto:${SUPPORT_EMAIL}`}
-              variant="ghost"
-              colorScheme="gray"
-            >
-              Support
             </Button>
           </HStack>
         </VStack>

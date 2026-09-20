@@ -49,16 +49,7 @@ export const OrganizationTeacherInviteEmail = ({
               has invited you to join{" "}
               <strong className="text-black">{orgName}</strong> on Studyapp
             </Heading>
-            <Content>
-              {BODY_COPY_BASE}{" "}
-              <a
-                href="https://studyapp.example/organizations"
-                className="text-blue-500"
-              >
-                Learn more
-              </a>
-              .
-            </Content>
+            <Content>{BODY_COPY_BASE}</Content>
             <Button
               href={url}
               className="mt-3 rounded-md bg-[#1a5fff] px-6 py-3 text-base text-white"

@@ -25,7 +25,6 @@ import { getSafeRedirectUrl } from "../../lib/urls";
 
 const computeMap = (
   invite = false,
-  orgMembership = false,
   organizationBound = false,
   isMobile = false,
 ) => {
@@ -36,7 +35,6 @@ const computeMap = (
     "/account-type",
     "/command-menu",
     "/invite",
-    "/subscribe",
     "/done",
   ];
   const remove = (index: string) => base.splice(base.indexOf(index), 1);
@@ -44,7 +42,6 @@ const computeMap = (
   if (isMobile) remove("/command-menu");
   if (!invite) remove("/invite");
   if (organizationBound) {
-    if (!orgMembership) remove("/subscribe");
     remove("/account-type");
   }
 
@@ -70,10 +67,9 @@ export const PresentWrapper: React.FC<React.PropsWithChildren> = ({
   const { data: me } = useMe();
 
   const isBound = !!me?.organization;
-  const hasMembership = !!me?.orgMembership;
 
   const hasInvite = !!me?.orgInvites.length;
-  const map = computeMap(hasInvite, hasMembership, isBound, isMobile);
+  const map = computeMap(hasInvite, isBound, isMobile);
 
   const currentStep = router.pathname.replace("/onboarding", "");
 
