@@ -25,7 +25,6 @@
     "next": "dotenv -- bun run --cwd apps/next",
     "website": "dotenv -- bun run --cwd apps/website",
     "prisma": "dotenv -- bun run --cwd packages/prisma",
-    "drizzle": "dotenv -- bun run --cwd packages/drizzle",
     "install-vercel": "sh ./install-vercel.sh",
     "email-dev": "dotenv -- npx email dev --dir packages/emails/templates --port 3001",
     "generate-org-students": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/generate-org-students.ts",

@@ -1,14 +1,7 @@
-import type { GetServerSidePropsContext } from "next";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 import { HeadSeo } from "@studyapp/components/head-seo";
-import { count, db, eq } from "@studyapp/drizzle";
-import {
-  classJoinCode as classJoinCodeTable,
-  foldersOnClasses,
-  studySetsOnClasses,
-} from "@studyapp/drizzle/schema";
 import { api } from "@studyapp/trpc";
 
 import {
@@ -116,43 +109,23 @@ const ClassResolver = ({
   );
 };
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  if (!db) return { props: { class: null } };
+// The Drizzle/edge SSR layer this page used was removed: it was gated behind a
+// PLANETSCALE flag that was never set, so this branch is the only one that has
+// ever run. getServerSideProps is kept so the route stays server-rendered
+// rather than becoming a static page that would demand getStaticPaths.
+interface ClassResolverProps {
+  id: string;
+  name: string;
+  bannerColor: string;
+  logoUrl: string | null;
+  logoHash: string | null;
+  studySets: number;
+  folders: number;
+}
 
-  const id = ctx.query?.id as string;
-
-  const classJoinCode = await db.query.classJoinCode.findFirst({
-    where: eq(classJoinCodeTable.code, id.substring(1)),
-    with: {
-      class: true,
-    },
-  });
-
-  if (!classJoinCode) return { props: { class: null } };
-
-  const studySets = await db
-    .select({
-      studySets: count(),
-    })
-    .from(studySetsOnClasses)
-    .where(eq(studySetsOnClasses.classId, classJoinCode.classId));
-  const folders = await db
-    .select({
-      folders: count(),
-    })
-    .from(foldersOnClasses)
-    .where(eq(foldersOnClasses.classId, classJoinCode.classId));
-
-  return {
-    props: {
-      class: {
-        ...classJoinCode.class,
-        studySets: studySets[0]?.studySets || 0,
-        folders: folders[0]?.folders || 0,
-      },
-    },
-  };
-};
+export const getServerSideProps = (): Promise<{
+  props: { class: ClassResolverProps | null };
+}> => Promise.resolve({ props: { class: null } });
 
 ClassResolver.PageWrapper = PageWrapper;
 ClassResolver.getLayout = getLayout;

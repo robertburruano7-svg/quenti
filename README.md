@@ -122,6 +122,9 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for deploying the app to Vercel: the
 required environment variables, the Google OAuth setup, and which features stay
 off until you add optional service credentials.
 
+The whole stack runs on free tiers — Vercel Hobby for hosting, TiDB Cloud
+Starter for the database, Google OAuth for sign-in — with no card required.
+
 ## Private submodules
 
 `apps/website`, `packages/console`, and `packages/integrations` are git

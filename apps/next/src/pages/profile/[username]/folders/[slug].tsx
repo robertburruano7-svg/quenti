@@ -1,9 +1,6 @@
-import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 
 import { HeadSeo } from "@studyapp/components/head-seo";
-import { and, db, eq, or, sql } from "@studyapp/drizzle";
-import { folder, studySetsOnFolders, user } from "@studyapp/drizzle/schema";
 
 import { LazyWrapper } from "../../../../common/lazy-wrapper";
 import { PageWrapper } from "../../../../common/page-wrapper";
@@ -51,54 +48,20 @@ const FolderPage = ({ folder }: inferSSRProps<typeof getServerSideProps>) => {
 FolderPage.PageWrapper = PageWrapper;
 FolderPage.getLayout = getLayout;
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  if (!db) return { props: { set: null } };
+// The Drizzle/edge SSR layer this page used was removed: it was gated behind a
+// PLANETSCALE flag that was never set, so this branch is the only one that has
+// ever run. getServerSideProps is kept so the route stays server-rendered
+// rather than becoming a static page that would demand getStaticPaths.
+interface FolderSeoProps {
+  title: string;
+  description: string;
+  studySets: number;
+  // Nullable to match the columns, which is why the render site coerces.
+  user: { username: string | null; image: string | null };
+}
 
-  const username = (ctx.query?.username as string).substring(1);
-  const idOrSlug = ctx.query?.slug as string;
-
-  const target = await db.query.user.findFirst({
-    where: eq(user.username, username),
-  });
-
-  if (!target) return { props: { folder: null } };
-
-  const targetFolder = await db.query.folder.findFirst({
-    where: and(
-      eq(folder.userId, target.id),
-      or(eq(folder.id, idOrSlug), eq(folder.slug, idOrSlug)),
-    ),
-    columns: {
-      id: true,
-      title: true,
-      description: true,
-    },
-    with: {
-      user: {
-        columns: {
-          username: true,
-          image: true,
-        },
-      },
-    },
-  });
-
-  if (!targetFolder) return { props: { folder: null } };
-
-  const { count } = (
-    await db
-      .select({
-        count: sql<number>`cast(count(${studySetsOnFolders.studySetId}) as unsigned)`,
-      })
-      .from(studySetsOnFolders)
-      .where(eq(studySetsOnFolders.folderId, targetFolder.id))
-  )[0]!;
-
-  return {
-    props: {
-      folder: { ...targetFolder, studySets: count },
-    },
-  };
-};
+export const getServerSideProps = (): Promise<{
+  props: { folder: FolderSeoProps | null };
+}> => Promise.resolve({ props: { folder: null } });
 
 export default FolderPage;

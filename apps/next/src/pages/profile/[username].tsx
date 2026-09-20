@@ -1,9 +1,7 @@
-import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 
 import { HeadSeo } from "@studyapp/components/head-seo";
-import { db, eq } from "@studyapp/drizzle";
-import { user as userTable } from "@studyapp/drizzle/schema";
+import type { ProfileImageProps } from "@studyapp/lib/seo";
 
 import { LazyWrapper } from "../../common/lazy-wrapper";
 import { PageWrapper } from "../../common/page-wrapper";
@@ -27,38 +25,13 @@ const UserPage = ({ user }: inferSSRProps<typeof getServerSideProps>) => {
   );
 };
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  if (!db) return { props: { user: null } };
-
-  const _username = ctx.query?.username as string;
-  const username = _username.substring(1);
-
-  const user = await db?.query.user.findFirst({
-    where: eq(userTable.username, username),
-    columns: {
-      id: true,
-      username: true,
-      image: true,
-      displayName: true,
-      name: true,
-      verified: true,
-    },
-  });
-
-  return {
-    props: {
-      user: user
-        ? {
-            id: user.id,
-            username: user.username!,
-            image: user.image ?? "",
-            name: user.displayName ? user.name : null,
-            verified: user.verified,
-          }
-        : null,
-    },
-  };
-};
+// The Drizzle/edge SSR layer this page used was removed: it was gated behind a
+// PLANETSCALE flag that was never set, so this branch is the only one that has
+// ever run. getServerSideProps is kept so the route stays server-rendered
+// rather than becoming a static page that would demand getStaticPaths.
+export const getServerSideProps = (): Promise<{
+  props: { user: ProfileImageProps | null };
+}> => Promise.resolve({ props: { user: null } });
 
 UserPage.PageWrapper = PageWrapper;
 UserPage.getLayout = getLayout;
