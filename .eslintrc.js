@@ -63,9 +63,9 @@ module.exports = {
       "error",
       {
         selector:
-          "ImportDeclaration[importKind!='type'][source.value=/@quenti\\u002Fprisma\\u002Fclient/]",
+          "ImportDeclaration[importKind!='type'][source.value=/@studyapp\\u002Fprisma\\u002Fclient/]",
         message:
-          "Must use 'import type' when importing from @quenti/prisma/client. Database schemas are exposed to the client!",
+          "Must use 'import type' when importing from @studyapp/prisma/client. Database schemas are exposed to the client!",
       },
     ],
     "no-restricted-imports": [
@@ -75,7 +75,7 @@ module.exports = {
           {
             name: "@chakra-ui/react",
             importNames: ["Link"],
-            message: "Use { Link } from @quenti/components instead.",
+            message: "Use { Link } from @studyapp/components instead.",
           },
         ],
       },

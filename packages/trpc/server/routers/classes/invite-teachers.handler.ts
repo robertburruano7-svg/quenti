@@ -1,4 +1,4 @@
-import { inngest } from "@quenti/inngest";
+import { inngest } from "@studyapp/inngest";
 
 import { TRPCError } from "@trpc/server";
 

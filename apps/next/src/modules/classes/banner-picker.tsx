@@ -1,4 +1,4 @@
-import { BANNER_COLORS } from "@quenti/lib/color";
+import { BANNER_COLORS } from "@studyapp/lib/color";
 
 import {
   Box,

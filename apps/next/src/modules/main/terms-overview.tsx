@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { ToggleGroup } from "@quenti/components/toggle-group";
-import type { FacingTerm } from "@quenti/interfaces";
+import { ToggleGroup } from "@studyapp/components/toggle-group";
+import type { FacingTerm } from "@studyapp/interfaces";
 
 import {
   Box,

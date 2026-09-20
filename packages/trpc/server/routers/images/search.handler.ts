@@ -1,4 +1,4 @@
-import { searchPhotos } from "@quenti/images/server/unsplash";
+import { searchPhotos } from "@studyapp/images/server/unsplash";
 
 import { getIp } from "../../lib/get-ip";
 import { RateLimitType, rateLimitOrThrowMultiple } from "../../lib/rate-limit";

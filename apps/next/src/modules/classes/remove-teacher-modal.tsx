@@ -1,5 +1,5 @@
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components/modal";
+import { api } from "@studyapp/trpc";
 
 import {
   Button,

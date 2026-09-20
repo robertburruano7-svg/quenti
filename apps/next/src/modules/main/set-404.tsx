@@ -1,4 +1,4 @@
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import { Center } from "@chakra-ui/react";
 

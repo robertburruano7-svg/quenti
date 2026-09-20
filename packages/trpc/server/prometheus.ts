@@ -1,7 +1,7 @@
 import client from "prom-client";
 
-import { env } from "@quenti/env/server";
-import { prisma } from "@quenti/prisma";
+import { env } from "@studyapp/env/server";
+import { prisma } from "@studyapp/prisma";
 
 import pjson from "../../../apps/next/package.json";
 

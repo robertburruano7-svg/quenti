@@ -1,4 +1,4 @@
-import { NotFoundPage } from "@quenti/components/404";
+import { NotFoundPage } from "@studyapp/components/404";
 
 import { PageWrapper } from "../common/page-wrapper";
 import { getLayout } from "../layouts/main-layout";

@@ -1,4 +1,4 @@
-import type { StudySetVisibility } from "@quenti/prisma/client";
+import type { StudySetVisibility } from "@studyapp/prisma/client";
 
 import { IconLink, IconLock, IconSchool, IconWorld } from "@tabler/icons-react";
 

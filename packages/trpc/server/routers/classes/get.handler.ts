@@ -1,6 +1,6 @@
-import { strip } from "@quenti/lib/strip";
-import type { Widen } from "@quenti/lib/widen";
-import { Prisma, type PrismaClient } from "@quenti/prisma/client";
+import { strip } from "@studyapp/lib/strip";
+import type { Widen } from "@studyapp/lib/widen";
+import { Prisma, type PrismaClient } from "@studyapp/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

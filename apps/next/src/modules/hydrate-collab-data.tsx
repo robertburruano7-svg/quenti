@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { type RouterOutputs, api } from "@studyapp/trpc";
 
 import { editorEventChannel } from "../events/editor";
 import { CollabEditorLayer } from "./collab/collab-editor-layer";

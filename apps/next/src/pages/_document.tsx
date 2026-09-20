@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-import { openSans, outfit, theme } from "@quenti/lib/chakra-theme";
+import { openSans, outfit, theme } from "@studyapp/lib/chakra-theme";
 
 import { ColorModeScript } from "@chakra-ui/react";
 

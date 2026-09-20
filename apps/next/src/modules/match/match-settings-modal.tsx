@@ -1,4 +1,4 @@
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@studyapp/components/modal";
 
 import { useSetFolderUnison } from "../../hooks/use-set-folder-unison";
 import { useContainerContext } from "../../stores/use-container-store";

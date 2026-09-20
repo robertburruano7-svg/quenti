@@ -1,6 +1,6 @@
 import { S3Client } from "@aws-sdk/client-s3";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 export const USERS_BUCKET = env.USERS_BUCKET_NAME || "users";
 export const ASSETS_BUCKET = env.ASSETS_BUCKET_NAME || "assets";

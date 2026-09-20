@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import type { EnabledFeature } from "@quenti/lib/feature";
+import type { EnabledFeature } from "@studyapp/lib/feature";
 
 export const useFeature = (feature: EnabledFeature) => {
   const { data: session, status } = useSession();

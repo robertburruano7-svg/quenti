@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@studyapp/components";
 
 import {
   Box,

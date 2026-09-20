@@ -1,4 +1,4 @@
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { TRPCError } from "@trpc/server";
 

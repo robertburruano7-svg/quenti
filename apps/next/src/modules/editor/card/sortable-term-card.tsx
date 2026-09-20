@@ -2,7 +2,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import React from "react";
 
-import type { Language } from "@quenti/core/language";
+import type { Language } from "@studyapp/core/language";
 
 import {
   type ClientTerm,

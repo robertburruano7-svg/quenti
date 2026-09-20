@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 export const useClassMembers = () => {
   const router = useRouter();

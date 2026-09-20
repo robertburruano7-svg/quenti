@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@studyapp/components/modal";
 
 import { Button, ButtonGroup, Stack, Text } from "@chakra-ui/react";
 

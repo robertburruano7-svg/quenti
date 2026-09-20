@@ -3,8 +3,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import type { EntityImageProps, ProfileImageProps } from "@quenti/lib/seo";
+import { env } from "@studyapp/env/client";
+import type { EntityImageProps, ProfileImageProps } from "@studyapp/lib/seo";
 
 const ImageWrapper: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
@@ -131,7 +131,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
           <img
             width="44"
             height="44"
-            src={`${env.NEXT_PUBLIC_APP_URL}/avatars/quenti.png`}
+            src={`${env.NEXT_PUBLIC_APP_URL}/avatars/studyapp.png`}
             tw="rounded-full"
           />
           <div
@@ -140,7 +140,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
             }}
             tw="text-white text-3xl ml-4"
           >
-            Quenti
+            Studyapp
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
         <img
           width="44"
           height="44"
-          src={`${env.NEXT_PUBLIC_APP_URL}/avatars/quenti.png`}
+          src={`${env.NEXT_PUBLIC_APP_URL}/avatars/studyapp.png`}
         />
         <div
           style={{
@@ -208,7 +208,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
           }}
           tw="text-white text-3xl ml-4"
         >
-          Quenti
+          Studyapp
         </div>
       </div>
     </ImageWrapper>

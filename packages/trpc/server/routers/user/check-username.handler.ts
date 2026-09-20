@@ -1,4 +1,4 @@
-import { failsPrecondition } from "@quenti/lib/usernames";
+import { failsPrecondition } from "@studyapp/lib/usernames";
 
 import { importConsole } from "../../../console";
 import { usernameProfanity } from "../../common/profanity";

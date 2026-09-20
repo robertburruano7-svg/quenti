@@ -2,8 +2,8 @@ import type { Session } from "next-auth";
 import type { AppProps as NextAppProps } from "next/app";
 import dynamic from "next/dynamic";
 
-import { env } from "@quenti/env/client";
-import { theme } from "@quenti/lib/chakra-theme";
+import { env } from "@studyapp/env/client";
+import { theme } from "@studyapp/lib/chakra-theme";
 
 import { ChakraProvider } from "@chakra-ui/provider";
 

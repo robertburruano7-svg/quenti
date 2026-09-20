@@ -1,4 +1,4 @@
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import { useSetEditorContext } from "../stores/use-set-editor-store";
 import { EditorListener } from "./editor-listener";

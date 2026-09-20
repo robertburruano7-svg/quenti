@@ -3,7 +3,7 @@ import React from "react";
 import type {
   MembershipRole,
   OrganizationDomainType,
-} from "@quenti/prisma/client";
+} from "@studyapp/prisma/client";
 
 import {
   Box,

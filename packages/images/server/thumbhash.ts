@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { rgbaToThumbHash } from "thumbhash";
 
-import { env } from "@quenti/env/client";
+import { env } from "@studyapp/env/client";
 
 const transform = (url: string, transform: string) => {
   const v = url.includes("?") ? "&" : "?";

@@ -3,7 +3,7 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import {
   Alert,

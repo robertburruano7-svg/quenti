@@ -9,7 +9,7 @@ import Underline from "@tiptap/extension-underline";
 import { generateHTML, generateJSON } from "@tiptap/html";
 import type { JSONContent } from "@tiptap/react";
 
-import type { Term } from "@quenti/prisma/client";
+import type { Term } from "@studyapp/prisma/client";
 
 export type EditorTerm = Term & {
   wordRichText: JSON | null | undefined;

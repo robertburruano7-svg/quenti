@@ -1,4 +1,4 @@
-import { Highlight } from "@quenti/lib/editor";
+import { Highlight } from "@studyapp/lib/editor";
 
 export const EditorGlobalStyles: React.FC<{ small?: boolean }> = ({
   small = false,

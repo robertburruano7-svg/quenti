@@ -1,5 +1,5 @@
 {
-  "name": "@quenti/env",
+  "name": "@studyapp/env",
   "private": true,
   "version": "0.0.0",
   "dependencies": {

@@ -1,7 +1,7 @@
 import type { JSONContent } from "@tiptap/react";
 
-import type { TermWithDistractors } from "@quenti/interfaces";
-import type { Prisma, StudySetAnswerMode } from "@quenti/prisma/client";
+import type { TermWithDistractors } from "@studyapp/interfaces";
+import type { Prisma, StudySetAnswerMode } from "@studyapp/prisma/client";
 
 export const word = (
   mode: StudySetAnswerMode,

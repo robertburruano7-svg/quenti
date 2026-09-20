@@ -1,7 +1,7 @@
 import { signOut, useSession } from "next-auth/react";
 
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
+import { Link } from "@studyapp/components";
+import { avatarUrl } from "@studyapp/lib/avatar";
 
 import {
   Avatar,

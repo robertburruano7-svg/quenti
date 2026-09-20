@@ -1,7 +1,7 @@
 import type { Session } from "next-auth";
 import type { AxiomAPIRequest } from "next-axiom";
 
-import type { PrismaClient } from "@quenti/prisma/client";
+import type { PrismaClient } from "@studyapp/prisma/client";
 
 export type HandlerInput = object;
 

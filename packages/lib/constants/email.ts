@@ -1,4 +1,4 @@
-export const BASE_EMAIL = "quenti.io";
+export const BASE_EMAIL = "studyapp.example";
 
 export const SUPPORT_EMAIL = `support@${BASE_EMAIL}`;
 export const BILLING_EMAIL = `billing@${BASE_EMAIL}`;

@@ -1,6 +1,6 @@
 import { Select } from "chakra-react-select";
 
-import type { MembershipRole } from "@quenti/prisma/client";
+import type { MembershipRole } from "@studyapp/prisma/client";
 
 import { useColorModeValue } from "@chakra-ui/react";
 

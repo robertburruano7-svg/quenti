@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@studyapp/components/modal";
 
 import {
   Button,

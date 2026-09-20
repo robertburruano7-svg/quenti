@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { env } from "@quenti/env/server";
-import { inngest } from "@quenti/inngest";
+import { env } from "@studyapp/env/server";
+import { inngest } from "@studyapp/inngest";
 
 const schema = z.object({
   userId: z.string().cuid2(),

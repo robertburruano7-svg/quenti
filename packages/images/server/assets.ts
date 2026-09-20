@@ -5,7 +5,7 @@ import {
 } from "@aws-sdk/client-s3";
 import jwt from "jsonwebtoken";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { ASSETS_BUCKET, S3 } from ".";
 
@@ -32,7 +32,7 @@ export const getPresignedObjectAssetJwt = <C extends AssetContainer>(
 
   return jwt.sign(
     { sub: `${getObjectKey(container)}/${id}/${asset}` },
-    env.QUENTI_ENCRYPTION_KEY,
+    env.STUDYAPP_ENCRYPTION_KEY,
     {
       expiresIn: "120s",
     },

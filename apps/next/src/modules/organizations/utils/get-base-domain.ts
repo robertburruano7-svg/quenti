@@ -1,4 +1,4 @@
-import type { OrganizationDomainType } from "@quenti/prisma/client";
+import type { OrganizationDomainType } from "@studyapp/prisma/client";
 
 export const getBaseDomain = <T extends { type: OrganizationDomainType }>(
   org: { domains: T[] } | undefined,

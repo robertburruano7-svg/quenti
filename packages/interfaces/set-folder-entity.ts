@@ -1,4 +1,4 @@
-import type { StudySetType, StudySetVisibility } from "@quenti/prisma/client";
+import type { StudySetType, StudySetVisibility } from "@studyapp/prisma/client";
 
 export interface SetFolderEntity {
   entityType: "set" | "folder";

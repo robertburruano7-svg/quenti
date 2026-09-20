@@ -1,6 +1,6 @@
 import React from "react";
 
-import { shuffleArray } from "@quenti/lib/array";
+import { shuffleArray } from "@studyapp/lib/array";
 
 import { RootFlashcardWrapper } from "../../components/root-flashcard-wrapper";
 import { useSetFolderUnison } from "../../hooks/use-set-folder-unison";

@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import generator from "otp-generator";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 export const genOtp = (email: string, expiresInMinutes = 5) => {
   const ttl = expiresInMinutes * 60 * 1000;
@@ -16,7 +16,7 @@ export const genOtp = (email: string, expiresInMinutes = 5) => {
 
   const data = `${email}.${otp}.${expires}`;
   const base = crypto
-    .createHmac("sha256", env.QUENTI_ENCRYPTION_KEY)
+    .createHmac("sha256", env.STUDYAPP_ENCRYPTION_KEY)
     .update(data)
     .digest("hex");
 
@@ -52,7 +52,7 @@ export const verifyOtp = (
 
   const data = `${email}.${otp}.${expires}`;
   const newHash = crypto
-    .createHmac("sha256", env.QUENTI_ENCRYPTION_KEY)
+    .createHmac("sha256", env.STUDYAPP_ENCRYPTION_KEY)
     .update(data)
     .digest("hex");
 

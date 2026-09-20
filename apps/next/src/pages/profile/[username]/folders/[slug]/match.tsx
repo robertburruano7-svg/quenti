@@ -1,4 +1,4 @@
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import { EditorGlobalStyles } from "../../../../../common/editor-global-styles";
 import { LazyWrapper } from "../../../../../common/lazy-wrapper";

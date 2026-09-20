@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { APP_URL } from "@quenti/lib/constants/url";
+import { APP_URL } from "@studyapp/lib/constants/url";
 
 export const useUnauthedRedirect = () => {
   const { data: session, status } = useSession();

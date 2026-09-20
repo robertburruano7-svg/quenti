@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { Folder } from "@quenti/prisma/client";
+import type { Folder } from "@studyapp/prisma/client";
 
 import { IconFolder } from "@tabler/icons-react";
 

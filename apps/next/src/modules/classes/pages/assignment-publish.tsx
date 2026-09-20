@@ -2,7 +2,7 @@ import { EditorContent, type JSONContent } from "@tiptap/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import {
   Button,

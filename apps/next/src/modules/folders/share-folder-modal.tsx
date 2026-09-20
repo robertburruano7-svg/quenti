@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components/modal";
+import { WEBSITE_URL } from "@studyapp/lib/constants/url";
+import { api } from "@studyapp/trpc";
 
 import { Button, HStack, Input, Skeleton, useToast } from "@chakra-ui/react";
 

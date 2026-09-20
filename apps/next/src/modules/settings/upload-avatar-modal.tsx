@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import { UploadAvatarModal as InnerModal } from "@quenti/images/react";
-import { api } from "@quenti/trpc";
+import { env } from "@studyapp/env/client";
+import { UploadAvatarModal as InnerModal } from "@studyapp/images/react";
+import { api } from "@studyapp/trpc";
 
 import { useToast } from "@chakra-ui/react";
 

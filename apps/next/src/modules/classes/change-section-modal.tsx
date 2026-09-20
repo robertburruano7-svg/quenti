@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { allEqual } from "@quenti/lib/array";
-import { avatarUrl } from "@quenti/lib/avatar";
-import type { User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components/modal";
+import { allEqual } from "@studyapp/lib/array";
+import { avatarUrl } from "@studyapp/lib/avatar";
+import type { User } from "@studyapp/prisma/client";
+import { api } from "@studyapp/trpc";
 
 import {
   Avatar,

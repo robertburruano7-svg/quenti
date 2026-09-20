@@ -32,7 +32,7 @@ export const ConfirmCodeEmail = ({
             </Heading>
             <Content>
               Someone (hopefully you) is trying to verify the domain{" "}
-              <b>{domain}</b> for the organization <b>{orgName}</b> on Quenti.
+              <b>{domain}</b> for the organization <b>{orgName}</b> on Studyapp.
               Not you? You can safely ignore this email.
             </Content>
             <code className="rounded-md bg-gray-200 p-1 px-2 font-mono text-xl font-bold text-gray-700">

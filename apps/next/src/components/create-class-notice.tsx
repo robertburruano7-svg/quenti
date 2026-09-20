@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link, Modal } from "@quenti/components";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { Link, Modal } from "@studyapp/components";
+import { WEBSITE_URL } from "@studyapp/lib/constants/url";
 
 import { Button, VStack } from "@chakra-ui/react";
 

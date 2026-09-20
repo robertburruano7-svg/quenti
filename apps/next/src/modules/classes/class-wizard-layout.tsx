@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import {
   Flex,

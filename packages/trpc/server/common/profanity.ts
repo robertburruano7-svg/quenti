@@ -4,7 +4,7 @@ import { ProfanityOptions } from "@2toad/profanity/dist/profanity-options";
 import { escapeRegExp } from "@2toad/profanity/dist/utils/misc";
 import type { JSONContent } from "@tiptap/react";
 
-import { getPlainText } from "@quenti/lib/editor";
+import { getPlainText } from "@studyapp/lib/editor";
 
 import { TRPCError } from "@trpc/server";
 

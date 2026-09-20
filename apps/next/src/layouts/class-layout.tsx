@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
-import { api } from "@quenti/trpc";
+import { Link } from "@studyapp/components";
+import { HeadSeo } from "@studyapp/components/head-seo";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,
@@ -94,7 +94,7 @@ export const ClassLayout: React.FC<
   const getTitle = () => {
     if (name) return `${name}${data?.name ? ` - ${data.name}` : ""}`;
     if (data?.name) return data.name;
-    return "Quenti";
+    return "Studyapp";
   };
 
   return (

@@ -1,7 +1,7 @@
-import { GenericLabel } from "@quenti/components";
-import type { Question } from "@quenti/interfaces";
-import { useShortcut } from "@quenti/lib/hooks/use-shortcut";
-import { api } from "@quenti/trpc";
+import { GenericLabel } from "@studyapp/components";
+import type { Question } from "@studyapp/interfaces";
+import { useShortcut } from "@studyapp/lib/hooks/use-shortcut";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

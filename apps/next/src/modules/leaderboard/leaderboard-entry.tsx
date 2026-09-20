@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { avatarUrl } from "@quenti/lib/avatar";
-import type { User } from "@quenti/prisma/client";
+import { avatarUrl } from "@studyapp/lib/avatar";
+import type { User } from "@studyapp/prisma/client";
 
 import {
   Avatar,

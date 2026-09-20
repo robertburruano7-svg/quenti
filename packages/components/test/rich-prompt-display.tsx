@@ -1,6 +1,6 @@
 import type { JSONContent } from "@tiptap/react";
 
-import type { Prisma } from "@quenti/prisma/client";
+import type { Prisma } from "@studyapp/prisma/client";
 
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 

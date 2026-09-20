@@ -2,7 +2,7 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 import React from "react";
 
-import type { TermWithDistractors } from "@quenti/interfaces";
+import type { TermWithDistractors } from "@studyapp/interfaces";
 
 import { queryEventChannel } from "../events/query";
 import { useAuthedSet } from "../hooks/use-set";

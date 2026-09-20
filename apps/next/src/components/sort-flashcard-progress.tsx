@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
-import { Link } from "@quenti/components";
-import { api } from "@quenti/trpc";
+import { Link } from "@studyapp/components";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

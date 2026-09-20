@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
+import { Link } from "@studyapp/components";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import { Flex, Heading, IconButton, Skeleton, Tag } from "@chakra-ui/react";
 

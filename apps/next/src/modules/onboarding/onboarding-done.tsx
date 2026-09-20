@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { useTelemetry } from "../../lib/telemetry";
 import { DefaultLayout } from "./default-layout";
@@ -44,7 +44,7 @@ export const OnboardingDone = () => {
       <DefaultLayout
         heading="You're all set!"
         seoTitle="You're all set!"
-        description="That's everything for now, you're ready to start using Quenti."
+        description="That's everything for now, you're ready to start using Studyapp."
         action="Done"
         nextLoading={startedLoading}
         onNext={async () => {

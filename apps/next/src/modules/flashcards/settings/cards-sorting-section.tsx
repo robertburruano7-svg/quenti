@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Flex, Stack, Switch, Text, useColorModeValue } from "@chakra-ui/react";
 

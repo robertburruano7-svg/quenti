@@ -2,7 +2,7 @@ import { handler as assetsHandler } from "./assets";
 import { handler as avatarHandler } from "./avatar";
 
 export interface Env {
-  QUENTI_ENCRYPTION_KEY: string;
+  STUDYAPP_ENCRYPTION_KEY: string;
   CORS_ALLOWED_ORIGINS: string;
   TWIC_DOMAIN?: string;
   CDN_ROOT_DOMAIN: string;

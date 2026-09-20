@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { formatScripts } from "@quenti/lib/scripts";
+import { formatScripts } from "@studyapp/lib/scripts";
 
 export const ScriptFormatter = ({ children }: { children: string }) => {
   const formatted = useMemo(() => formatScripts(children), [children]);

@@ -1,7 +1,7 @@
-import { FrameLogo, Link } from "@quenti/components";
-import { GithubIcon, XIcon } from "@quenti/components/icons";
-import { SUPPORT_EMAIL } from "@quenti/lib/constants/email";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { FrameLogo, Link } from "@studyapp/components";
+import { GithubIcon, XIcon } from "@studyapp/components/icons";
+import { SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
+import { WEBSITE_URL } from "@studyapp/lib/constants/url";
 
 import {
   Box,
@@ -52,7 +52,7 @@ export const Footer = () => {
                 <HStack>
                   <FrameLogo width="18px" height="18px" />
                   <Heading size="md" className="notranslate">
-                    Quenti
+                    Studyapp
                   </Heading>
                 </HStack>
               </Link>
@@ -128,10 +128,10 @@ export const Footer = () => {
             <FooterLink href={WEBSITE_URL} text="Home" />
             <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
             <FooterLink
-              href="https://github.com/quenti-io/quenti"
+              href="https://github.com/robertburruano7-svg/quenti"
               text="Open source"
             />
-            <FooterLink href="https://status.quenti.io" text="Status" />
+            <FooterLink href="https://status.studyapp.example" text="Status" />
             <FooterLink
               href={`${WEBSITE_URL}/organizations`}
               text="Organizations"
@@ -143,7 +143,7 @@ export const Footer = () => {
             <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
             <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
             <FooterLink
-              href="https://github.com/quenti-io/quenti/blob/main/LICENSE"
+              href="https://github.com/robertburruano7-svg/quenti/blob/main/LICENSE"
               text="License"
             />
           </HStack>
@@ -163,10 +163,10 @@ export const Footer = () => {
 const SocialLinksContainer = () => {
   return (
     <HStack spacing="3">
-      <SocialLink href="https://github.com/quenti-io">
+      <SocialLink href="https://github.com/robertburruano7-svg">
         <GithubIcon w="4" h="4" />
       </SocialLink>
-      <SocialLink href="https://twitter.com/quentiapp">
+      <SocialLink href="https://twitter.com/studyapp">
         <XIcon w="4" h="4" />
       </SocialLink>
     </HStack>

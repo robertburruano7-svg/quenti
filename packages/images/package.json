@@ -1,5 +1,5 @@
 {
-  "name": "@quenti/images",
+  "name": "@studyapp/images",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.418.0",
     "@chakra-ui/react": "^2.8.2",
-    "@quenti/components": "workspace:*",
-    "@quenti/env": "workspace:*",
-    "@quenti/lib": "workspace:*",
+    "@studyapp/components": "workspace:*",
+    "@studyapp/env": "workspace:*",
+    "@studyapp/lib": "workspace:*",
     "@tabler/icons-react": "^2.44.0",
     "@upstash/redis": "^1.22.1",
     "jsonwebtoken": "^9.0.2",

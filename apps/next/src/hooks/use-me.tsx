@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 export const useMe = () => {
   const { data: session } = useSession();

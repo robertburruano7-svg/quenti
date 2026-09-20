@@ -1,6 +1,6 @@
 import { Img } from "@react-email/components";
 
-import { env } from "@quenti/env/client";
+import { env } from "@studyapp/env/client";
 
 interface LogoProps {
   width?: number;
@@ -18,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({
       src={`${env.NEXT_PUBLIC_APP_URL}/android-chrome-192x192.png`}
       width={width}
       height={height}
-      alt="Quenti"
+      alt="Studyapp"
       className={className}
     />
   );

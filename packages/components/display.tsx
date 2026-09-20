@@ -2,8 +2,8 @@ import type { JSONContent } from "@tiptap/react";
 import React from "react";
 import { FilterXSS, escapeAttrValue, getDefaultWhiteList } from "xss";
 
-import { richTextToHtml } from "@quenti/lib/editor";
-import type { Prisma } from "@quenti/prisma/client";
+import { richTextToHtml } from "@studyapp/lib/editor";
+import type { Prisma } from "@studyapp/prisma/client";
 
 import { ScriptFormatter } from "./script-formatter";
 

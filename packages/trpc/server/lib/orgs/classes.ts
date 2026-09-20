@@ -1,4 +1,4 @@
-import { prisma } from "@quenti/prisma";
+import { prisma } from "@studyapp/prisma";
 
 export const bulkJoinOrgClasses = async (orgId: string) => {
   await prisma.class.updateMany({

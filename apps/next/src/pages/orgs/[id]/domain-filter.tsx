@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { ORG_SUPPORT_EMAIL } from "@quenti/lib/constants/email";
+import { Link } from "@studyapp/components";
+import { ORG_SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
 
 import {
   Box,

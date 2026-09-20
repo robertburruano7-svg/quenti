@@ -1,7 +1,7 @@
 import { connect } from "@planetscale/database";
 import { drizzle } from "drizzle-orm/planetscale-serverless";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import * as schema from "./schema";
 

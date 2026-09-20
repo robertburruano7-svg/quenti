@@ -2,16 +2,16 @@ import { EditorContent, type JSONContent, useEditor } from "@tiptap/react";
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { Display } from "@quenti/components/display";
-import type { FacingTerm } from "@quenti/interfaces";
+import { Display } from "@studyapp/components/display";
+import type { FacingTerm } from "@studyapp/interfaces";
 import {
   type EditorTerm,
   editorInput,
   getPlainText,
   hasRichText,
   richTextToHtml,
-} from "@quenti/lib/editor";
-import { api } from "@quenti/trpc";
+} from "@studyapp/lib/editor";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { outfit } from "@quenti/lib/chakra-theme";
+import { outfit } from "@studyapp/lib/chakra-theme";
 
 import {
   Center,

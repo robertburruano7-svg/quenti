@@ -2,11 +2,11 @@ import { EditorContent, type JSONContent } from "@tiptap/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
-import { env } from "@quenti/env/client";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { api } from "@quenti/trpc";
+import { Link } from "@studyapp/components";
+import { HeadSeo } from "@studyapp/components/head-seo";
+import { env } from "@studyapp/env/client";
+import { outfit } from "@studyapp/lib/chakra-theme";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type Language, languages } from "@quenti/core";
+import { type Language, languages } from "@studyapp/core";
 
 import {
   Box,

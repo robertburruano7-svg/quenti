@@ -3,8 +3,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Modal } from "@quenti/components";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components";
+import { api } from "@studyapp/trpc";
 
 import {
   Button,
@@ -129,7 +129,7 @@ export const InviteTeachersModal: React.FC<InviteTeachersModalProps> = ({
               <Text>
                 Teachers within your organization with emails ending in{" "}
                 <strong>@{domain}</strong> are automatically added. Send out
-                invites for your teachers to sign up on Quenti.
+                invites for your teachers to sign up on Studyapp.
               </Text>
             </Stack>
             <Stack spacing="6">

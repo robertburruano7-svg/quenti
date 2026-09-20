@@ -1,14 +1,14 @@
 import { DeleteObjectsCommand, ListObjectsCommand } from "@aws-sdk/client-s3";
 import jwt from "jsonwebtoken";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { S3, USERS_BUCKET } from ".";
 
 export const getPresignedAvatarJwt = (userId: string) => {
   if (!S3) return "";
 
-  return jwt.sign({ sub: userId }, env.QUENTI_ENCRYPTION_KEY, {
+  return jwt.sign({ sub: userId }, env.STUDYAPP_ENCRYPTION_KEY, {
     expiresIn: "120s",
   });
 };

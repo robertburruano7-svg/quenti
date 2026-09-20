@@ -1,5 +1,5 @@
-import { ToggleGroup } from "@quenti/components/toggle-group";
-import { api } from "@quenti/trpc";
+import { ToggleGroup } from "@studyapp/components/toggle-group";
+import { api } from "@studyapp/trpc";
 
 import { Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 

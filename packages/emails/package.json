@@ -1,13 +1,13 @@
 {
-  "name": "@quenti/emails",
+  "name": "@studyapp/emails",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/branding": "workspace:*",
-    "@quenti/env": "workspace:*",
-    "@quenti/lib": "workspace:*",
+    "@studyapp/branding": "workspace:*",
+    "@studyapp/env": "workspace:*",
+    "@studyapp/lib": "workspace:*",
     "@react-email/components": "^0.0.7",
     "@react-email/tailwind": "^0.0.9",
     "react": "^18.2.0",

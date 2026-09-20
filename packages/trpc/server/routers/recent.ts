@@ -1,4 +1,4 @@
-import type { SetFolderEntity } from "@quenti/interfaces";
+import type { SetFolderEntity } from "@studyapp/interfaces";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { getBelongingClasses } from "./classes/utils/get-belonging";

@@ -1,9 +1,9 @@
 import React from "react";
 import Cropper from "react-easy-crop";
 
-import { Modal } from "@quenti/components";
-import type { Rect } from "@quenti/lib/area";
-import { useFileReader } from "@quenti/lib/hooks";
+import { Modal } from "@studyapp/components";
+import type { Rect } from "@studyapp/lib/area";
+import { useFileReader } from "@studyapp/lib/hooks";
 
 import {
   Box,

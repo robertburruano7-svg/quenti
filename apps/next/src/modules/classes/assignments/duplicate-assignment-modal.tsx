@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Modal } from "@quenti/components";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

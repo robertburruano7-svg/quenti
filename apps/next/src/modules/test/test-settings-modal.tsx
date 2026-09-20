@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { ToggleGroup } from "@quenti/components/toggle-group";
+import { Modal } from "@studyapp/components/modal";
+import { ToggleGroup } from "@studyapp/components/toggle-group";
 import {
   getQuestionTypeIcon,
   getQuestionTypeName,
-} from "@quenti/components/utils";
-import { TestQuestionType } from "@quenti/interfaces";
+} from "@studyapp/components/utils";
+import { TestQuestionType } from "@studyapp/interfaces";
 
 import {
   Box,

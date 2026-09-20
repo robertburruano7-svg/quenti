@@ -1,7 +1,7 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import React from "react";
 
-import { Display } from "@quenti/components/display";
+import { Display } from "@studyapp/components/display";
 
 import { Card, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 

@@ -1,7 +1,7 @@
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { RouterOutputs } from "@quenti/trpc";
+import type { RouterOutputs } from "@studyapp/trpc";
 
 import {
   Box,

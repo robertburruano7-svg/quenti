@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
+import { Link } from "@studyapp/components";
 
 import {
   Avatar,

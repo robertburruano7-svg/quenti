@@ -1,7 +1,7 @@
 import type { Editor } from "@tiptap/core";
 import React from "react";
 
-import { A, Highlight } from "@quenti/lib/editor";
+import { A, Highlight } from "@studyapp/lib/editor";
 
 import {
   Box,

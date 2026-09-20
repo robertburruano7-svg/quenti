@@ -1,6 +1,6 @@
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { GridItem, Stack } from "@chakra-ui/react";
 

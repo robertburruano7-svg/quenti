@@ -1,6 +1,6 @@
 import React from "react";
 
-import { outfit } from "@quenti/lib/chakra-theme";
+import { outfit } from "@studyapp/lib/chakra-theme";
 
 import {
   Card,
@@ -41,7 +41,7 @@ export const OnboardingCommandMenu = () => {
           interacted ? (
             <>
               Don&apos;t forget, you can always{" "}
-              <b>{MOD == "Control" ? "Ctrl" : "⌘"} + K</b> to navigate Quenti.
+              <b>{MOD == "Control" ? "Ctrl" : "⌘"} + K</b> to navigate Studyapp.
             </>
           ) : (
             "Navigate between sets, folders and classes quickly."
