@@ -26,7 +26,7 @@ Get up and running by following these steps.
 
 ### Prerequisites
 
-- Node.js 18.x
+- Node.js 20.x or newer
 - MySQL
 - Bun
 - Docker and docker-compose _(recommended)_
@@ -101,6 +101,12 @@ bun start
 ```
 
 Navigate to http://localhost:3000 and Studyapp should be up and running!
+
+## Hosting
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for deploying the app to Vercel: the
+required environment variables, the Google OAuth setup, and which features stay
+off until you add optional service credentials.
 
 ## Private submodules
 
