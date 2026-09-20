@@ -2,9 +2,9 @@ import type { JSONContent } from "@tiptap/react";
 import React from "react";
 import useFitText from "use-fit-text";
 
-import { Display } from "@quenti/components/display";
-import type { FacingTerm } from "@quenti/interfaces";
-import { outfit } from "@quenti/lib/chakra-theme";
+import { Display } from "@studyapp/components/display";
+import type { FacingTerm } from "@studyapp/interfaces";
+import { outfit } from "@studyapp/lib/chakra-theme";
 
 import {
   Box,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { Term } from "@quenti/prisma/client";
+import type { Term } from "@studyapp/prisma/client";
 
 import { Box, Card, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 

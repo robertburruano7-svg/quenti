@@ -1,4 +1,4 @@
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { collectOrganizationActivity } from "./functions/collect-organization-activity";
 import { completeQuizletProfileImport } from "./functions/complete-quizlet-profile-import";

@@ -5,8 +5,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { EnabledFeature } from "@quenti/lib/feature";
-import { api } from "@quenti/trpc";
+import { EnabledFeature } from "@studyapp/lib/feature";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

@@ -1,4 +1,4 @@
-import type { Widen } from "@quenti/lib/widen";
+import type { Widen } from "@studyapp/lib/widen";
 
 import type { useAssignment } from "../../../hooks/use-assignment";
 import type { useSet } from "../../../hooks/use-set";

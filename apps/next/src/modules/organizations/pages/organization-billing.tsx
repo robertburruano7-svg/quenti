@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { ORG_SUPPORT_EMAIL } from "@quenti/lib/constants/email";
-import { APP_URL } from "@quenti/lib/constants/url";
-import type { MembershipRole } from "@quenti/prisma/client";
+import { Link } from "@studyapp/components";
+import { ORG_SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
+import { APP_URL } from "@studyapp/lib/constants/url";
+import type { MembershipRole } from "@studyapp/prisma/client";
 
 import {
   Button,

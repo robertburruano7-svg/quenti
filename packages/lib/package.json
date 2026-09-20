@@ -1,12 +1,12 @@
 {
-  "name": "@quenti/lib",
+  "name": "@studyapp/lib",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/theme-tools": "^2.1.2",
-    "@quenti/env": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@studyapp/env": "workspace:*",
+    "@studyapp/prisma": "workspace:*",
     "@tiptap/core": "^2.1.12",
     "@tiptap/extension-bold": "^2.1.12",
     "@tiptap/extension-document": "^2.1.12",

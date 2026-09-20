@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { env } from "@quenti/env/server";
-import { register } from "@quenti/trpc/server/prometheus";
+import { env } from "@studyapp/env/server";
+import { register } from "@studyapp/trpc/server/prometheus";
 
 export default async function handler(
   req: NextApiRequest,

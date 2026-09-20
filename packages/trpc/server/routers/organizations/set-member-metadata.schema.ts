@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { orgMembershipMetadata } from "@quenti/prisma/zod-schemas";
+import { orgMembershipMetadata } from "@studyapp/prisma/zod-schemas";
 
 export const ZSetMemberMetadataSchema = z.object({
   metadata: orgMembershipMetadata,

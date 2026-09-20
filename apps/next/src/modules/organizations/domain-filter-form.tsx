@@ -3,9 +3,9 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Link } from "@quenti/components";
-import { api } from "@quenti/trpc";
-import { refineRegex } from "@quenti/trpc/server/common/validation";
+import { Link } from "@studyapp/components";
+import { api } from "@studyapp/trpc";
+import { refineRegex } from "@studyapp/trpc/server/common/validation";
 
 import {
   FormControl,

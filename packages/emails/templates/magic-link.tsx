@@ -18,16 +18,16 @@ export const MagicLinkEmail = ({
     <Tailwind>
       <Html>
         <Head />
-        <Preview>Your Quenti magic link</Preview>
+        <Preview>Your Studyapp magic link</Preview>
         <BodyContainer>
           <MainContainer>
             <Logo />
-            <Heading>Your Quenti magic link</Heading>
+            <Heading>Your Studyapp magic link</Heading>
             <Button
               href={url}
               className="mb-2 mt-4 rounded-md bg-[#1a5fff] px-5 py-3 text-white"
             >
-              Login to Quenti
+              Login to Studyapp
             </Button>
             <Content>
               If you didn&apos;t request this, please ignore this email.

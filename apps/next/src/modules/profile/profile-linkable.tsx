@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components";
-import type { StudySetVisibility } from "@quenti/prisma/client";
+import { Link } from "@studyapp/components";
+import type { StudySetVisibility } from "@studyapp/prisma/client";
 
 import {
   Box,

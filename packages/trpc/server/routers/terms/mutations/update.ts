@@ -1,5 +1,5 @@
-import { prisma } from "@quenti/prisma";
-import { Prisma, type Term } from "@quenti/prisma/client";
+import { prisma } from "@studyapp/prisma";
+import { Prisma, type Term } from "@studyapp/prisma/client";
 
 export const bulkUpdateTerms = async (
   terms: Pick<

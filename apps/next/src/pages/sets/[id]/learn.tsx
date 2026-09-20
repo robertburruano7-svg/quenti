@@ -2,9 +2,9 @@ import { useSession } from "next-auth/react";
 import { log } from "next-axiom";
 import React from "react";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { CORRECT, INCORRECT } from "@quenti/lib/constants/remarks";
-import { api } from "@quenti/trpc";
+import { HeadSeo } from "@studyapp/components/head-seo";
+import { CORRECT, INCORRECT } from "@studyapp/lib/constants/remarks";
+import { api } from "@studyapp/trpc";
 
 import { Container, Stack } from "@chakra-ui/react";
 

@@ -1,4 +1,4 @@
-import type { CortexGraderResponse } from "@quenti/interfaces";
+import type { CortexGraderResponse } from "@studyapp/interfaces";
 
 import { Box, HStack, Stack, Text, Tooltip } from "@chakra-ui/react";
 

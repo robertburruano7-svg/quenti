@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { StudySet } from "@quenti/prisma/client";
+import type { StudySet } from "@studyapp/prisma/client";
 
 import { HStack, Text } from "@chakra-ui/react";
 

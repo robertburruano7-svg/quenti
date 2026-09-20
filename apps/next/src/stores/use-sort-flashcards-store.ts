@@ -2,7 +2,7 @@ import React from "react";
 import { createStore, useStore } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
-import type { FacingTerm, StudiableTerm } from "@quenti/interfaces";
+import type { FacingTerm, StudiableTerm } from "@studyapp/interfaces";
 
 export interface SortFlashcardsStoreProps {
   studiableTerms: StudiableTerm[];

@@ -1,4 +1,4 @@
-import { TestQuestionType } from "@quenti/interfaces";
+import { TestQuestionType } from "@studyapp/interfaces";
 
 import {
   IconLayersSubtract,

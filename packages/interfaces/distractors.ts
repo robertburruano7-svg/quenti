@@ -1,4 +1,4 @@
-import type { DistractorType } from "@quenti/prisma/client";
+import type { DistractorType } from "@studyapp/prisma/client";
 
 import type { FacingTerm } from "./studiable-term";
 

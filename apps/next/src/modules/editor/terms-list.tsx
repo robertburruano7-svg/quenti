@@ -18,7 +18,7 @@ import {
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 
-import { useShortcut } from "@quenti/lib/hooks/use-shortcut";
+import { useShortcut } from "@studyapp/lib/hooks/use-shortcut";
 
 import { Box, Button, Stack } from "@chakra-ui/react";
 

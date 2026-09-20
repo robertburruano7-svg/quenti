@@ -1,10 +1,10 @@
 import { log } from "next-axiom";
 
-import { env } from "@quenti/env/server";
-import { APP_URL } from "@quenti/lib/constants/url";
-import { getErrorFromUnknown } from "@quenti/lib/error";
-import { prisma } from "@quenti/prisma";
-import { orgMetadataSchema } from "@quenti/prisma/zod-schemas";
+import { env } from "@studyapp/env/server";
+import { APP_URL } from "@studyapp/lib/constants/url";
+import { getErrorFromUnknown } from "@studyapp/lib/error";
+import { prisma } from "@studyapp/prisma";
+import { orgMetadataSchema } from "@studyapp/prisma/zod-schemas";
 
 import { getStripeCustomerIdFromUserId } from "./customer";
 import { stripe } from "./stripe";

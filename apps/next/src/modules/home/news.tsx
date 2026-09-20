@@ -1,4 +1,4 @@
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Grid, Heading, Skeleton, Stack } from "@chakra-ui/react";
 

@@ -1,6 +1,6 @@
 import { Select } from "chakra-react-select";
 
-import type { StudySetAnswerMode } from "@quenti/prisma/client";
+import type { StudySetAnswerMode } from "@studyapp/prisma/client";
 
 import { useColorModeValue } from "@chakra-ui/react";
 

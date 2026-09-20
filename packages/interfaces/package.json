@@ -1,11 +1,11 @@
 {
-  "name": "@quenti/interfaces",
+  "name": "@studyapp/interfaces",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/prisma": "workspace:*"
+    "@studyapp/prisma": "workspace:*"
   },
   "devDependencies": {
     "@tiptap/react": "^2.1.12"

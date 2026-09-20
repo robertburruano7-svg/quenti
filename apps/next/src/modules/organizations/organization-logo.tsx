@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { thumbHashToDataURL } from "thumbhash";
 
-import { decodeBase64 } from "@quenti/lib/bytes";
+import { decodeBase64 } from "@studyapp/lib/bytes";
 
 import { Box, Center } from "@chakra-ui/react";
 

@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Flex, HStack, IconButton, Skeleton, Tooltip } from "@chakra-ui/react";
 

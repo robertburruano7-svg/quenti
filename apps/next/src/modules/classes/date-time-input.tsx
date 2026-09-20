@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DateTimePicker } from "@quenti/components/date-time-picker";
+import { DateTimePicker } from "@studyapp/components/date-time-picker";
 
 import {
   Box,

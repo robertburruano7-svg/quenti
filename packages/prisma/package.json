@@ -1,5 +1,5 @@
 {
-  "name": "@quenti/prisma",
+  "name": "@studyapp/prisma",
   "version": "0.0.0",
   "private": true,
   "main": "index.ts",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.5.2",
-    "@quenti/env": "workspace:*",
+    "@studyapp/env": "workspace:*",
     "zod": "^3.22.4",
     "zod-prisma": "^0.5.4"
   },

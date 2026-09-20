@@ -1,5 +1,5 @@
-import { strip } from "@quenti/lib/strip";
-import type { StudiableTerm, Term } from "@quenti/prisma/client";
+import { strip } from "@studyapp/lib/strip";
+import type { StudiableTerm, Term } from "@studyapp/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

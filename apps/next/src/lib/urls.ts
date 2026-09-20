@@ -1,4 +1,4 @@
-import { APP_URL, WEBSITE_URL } from "@quenti/lib/constants/url";
+import { APP_URL, WEBSITE_URL } from "@studyapp/lib/constants/url";
 
 export const getBaseDomain = () => {
   return APP_URL.replace(/https?:\/\//, "");

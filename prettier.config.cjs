@@ -1,7 +1,7 @@
 /** @type {import("prettier").Config} */
 module.exports = {
   importOrder: [
-    "^@quenti/(.*)$",
+    "^@studyapp/(.*)$",
     "^@trpc/(.*)$",
     "^@chakra-ui/(.*)$",
     "^@tabler/icons-react$",

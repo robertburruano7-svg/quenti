@@ -1,14 +1,14 @@
 {
-  "name": "@quenti/inngest",
+  "name": "@studyapp/inngest",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@quenti/cortex": "workspace:*",
-    "@quenti/emails": "workspace:*",
-    "@quenti/enterprise": "workspace:*",
-    "@quenti/env": "workspace:*",
-    "@quenti/payments": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@studyapp/cortex": "workspace:*",
+    "@studyapp/emails": "workspace:*",
+    "@studyapp/enterprise": "workspace:*",
+    "@studyapp/env": "workspace:*",
+    "@studyapp/payments": "workspace:*",
+    "@studyapp/prisma": "workspace:*",
     "inngest": "^3.0.2"
   },
   "scripts": {

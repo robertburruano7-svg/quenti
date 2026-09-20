@@ -1,4 +1,7 @@
-import { getCachedSearch, searchPhotos } from "@quenti/images/server/unsplash";
+import {
+  getCachedSearch,
+  searchPhotos,
+} from "@studyapp/images/server/unsplash";
 
 import { TRPCError } from "@trpc/server";
 

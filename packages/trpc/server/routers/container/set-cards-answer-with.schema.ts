@@ -3,7 +3,7 @@ import { z } from "zod";
 import {
   ContainerType,
   LimitedStudySetAnswerMode,
-} from "@quenti/prisma/client";
+} from "@studyapp/prisma/client";
 
 export const ZSetCardsAnswerWithSchema = z.object({
   entityId: z.string(),

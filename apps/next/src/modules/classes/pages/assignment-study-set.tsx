@@ -4,8 +4,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { LANGUAGE_VALUES, type Language, languageName } from "@quenti/core";
-import { api } from "@quenti/trpc";
+import { LANGUAGE_VALUES, type Language, languageName } from "@studyapp/core";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

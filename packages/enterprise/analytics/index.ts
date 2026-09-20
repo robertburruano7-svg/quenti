@@ -1,4 +1,4 @@
-import prisma from "@quenti/prisma";
+import prisma from "@studyapp/prisma";
 
 import { clickhouse } from "./clickhouse";
 import { cache } from "./redis";

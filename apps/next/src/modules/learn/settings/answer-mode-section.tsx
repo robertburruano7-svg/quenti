@@ -1,4 +1,4 @@
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Link } from "@quenti/components/link";
-import { avatarUrl } from "@quenti/lib/avatar";
+import { Link } from "@studyapp/components/link";
+import { avatarUrl } from "@studyapp/lib/avatar";
 
 import {
   Avatar,

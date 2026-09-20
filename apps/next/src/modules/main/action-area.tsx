@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import React from "react";
 import { useReactToPrint } from "react-to-print";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { ButtonGroup, IconButton, Tooltip } from "@chakra-ui/react";
 

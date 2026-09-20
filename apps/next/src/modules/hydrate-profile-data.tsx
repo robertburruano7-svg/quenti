@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { type RouterOutputs, api } from "@studyapp/trpc";
 
 import { Loading } from "../components/loading";
 import { useLoading } from "../hooks/use-loading";

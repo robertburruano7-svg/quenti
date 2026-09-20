@@ -1,4 +1,4 @@
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import type { AppProps } from "../common/app-providers";
 import "../styles/globals.css";

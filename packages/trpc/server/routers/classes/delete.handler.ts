@@ -1,4 +1,4 @@
-import { deleteObjectAssets } from "@quenti/images/server";
+import { deleteObjectAssets } from "@studyapp/images/server";
 
 import { isClassTeacherOrThrow } from "../../lib/queries/classes";
 import type { NonNullableUserContext } from "../../lib/types";

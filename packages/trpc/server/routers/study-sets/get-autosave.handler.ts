@@ -1,4 +1,4 @@
-import type { Language } from "@quenti/core";
+import type { Language } from "@studyapp/core";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
 

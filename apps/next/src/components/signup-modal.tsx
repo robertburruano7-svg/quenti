@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@studyapp/components/modal";
 
 import {
   Button,
@@ -62,7 +62,7 @@ export default function SignupModal() {
                   )
                 }
               >
-                Sign up for Quenti
+                Sign up for Studyapp
               </Button>
               <Button
                 h="10"

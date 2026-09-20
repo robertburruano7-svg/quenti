@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { useDebounce } from "@quenti/lib/hooks/use-debounce";
-import { api } from "@quenti/trpc";
+import { useDebounce } from "@studyapp/lib/hooks/use-debounce";
+import { api } from "@studyapp/trpc";
 
 import {
   Box,

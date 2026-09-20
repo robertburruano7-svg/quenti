@@ -1,10 +1,10 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import type { Adapter } from "next-auth/adapters";
 
-import { env as clientEnv } from "@quenti/env/client";
-import { env } from "@quenti/env/server";
-import { USERNAME_REPLACE_REGEXP } from "@quenti/lib/constants/characters";
-import type { PrismaClient, UserType } from "@quenti/prisma/client";
+import { env as clientEnv } from "@studyapp/env/client";
+import { env } from "@studyapp/env/server";
+import { USERNAME_REPLACE_REGEXP } from "@studyapp/lib/constants/characters";
+import type { PrismaClient, UserType } from "@studyapp/prisma/client";
 
 export function CustomPrismaAdapter(p: PrismaClient): Adapter {
   return {

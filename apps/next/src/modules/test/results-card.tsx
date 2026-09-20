@@ -3,8 +3,8 @@ import React from "react";
 import {
   getQuestionTypeIcon,
   getQuestionTypeName,
-} from "@quenti/components/utils";
-import { outfit } from "@quenti/lib/chakra-theme";
+} from "@studyapp/components/utils";
+import { outfit } from "@studyapp/lib/chakra-theme";
 
 import {
   Box,

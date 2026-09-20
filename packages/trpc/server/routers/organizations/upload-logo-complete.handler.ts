@@ -1,4 +1,4 @@
-import { getObjectAssetUrl, thumbhashFromCdn } from "@quenti/images/server";
+import { getObjectAssetUrl, thumbhashFromCdn } from "@studyapp/images/server";
 
 import { TRPCError } from "@trpc/server";
 

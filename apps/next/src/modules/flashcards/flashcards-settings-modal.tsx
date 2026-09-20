@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@studyapp/components/modal";
 
 import { Authed } from "../../components/authed";
 import { useSetFolderUnison } from "../../hooks/use-set-folder-unison";

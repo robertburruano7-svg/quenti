@@ -1,13 +1,13 @@
 {
-  "name": "@quenti/payments",
+  "name": "@studyapp/payments",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/env": "workspace:*",
-    "@quenti/lib": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@studyapp/env": "workspace:*",
+    "@studyapp/lib": "workspace:*",
+    "@studyapp/prisma": "workspace:*",
     "next-axiom": "^0.18.0",
     "stripe": "^13.9.0"
   },

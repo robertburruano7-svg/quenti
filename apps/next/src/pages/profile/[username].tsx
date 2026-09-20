@@ -1,9 +1,9 @@
 import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { db, eq } from "@quenti/drizzle";
-import { user as userTable } from "@quenti/drizzle/schema";
+import { HeadSeo } from "@studyapp/components/head-seo";
+import { db, eq } from "@studyapp/drizzle";
+import { user as userTable } from "@studyapp/drizzle/schema";
 
 import { LazyWrapper } from "../../common/lazy-wrapper";
 import { PageWrapper } from "../../common/page-wrapper";

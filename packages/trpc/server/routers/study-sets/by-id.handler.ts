@@ -1,7 +1,7 @@
-import type { Language } from "@quenti/core";
-import { strip } from "@quenti/lib/strip";
-import type { Widen } from "@quenti/lib/widen";
-import { type StarredTerm, type StudiableTerm } from "@quenti/prisma/client";
+import type { Language } from "@studyapp/core";
+import { strip } from "@studyapp/lib/strip";
+import type { Widen } from "@studyapp/lib/widen";
+import { type StarredTerm, type StudiableTerm } from "@studyapp/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

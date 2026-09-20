@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { avatarUrl } from "@quenti/lib/avatar";
+import { avatarUrl } from "@studyapp/lib/avatar";
 
 import {
   Avatar,

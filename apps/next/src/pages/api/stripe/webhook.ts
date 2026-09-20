@@ -3,12 +3,12 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
 import { z } from "zod";
 
-import { disbandOrgUsers } from "@quenti/enterprise/users";
-import { env } from "@quenti/env/server";
-import { getErrorFromUnknown } from "@quenti/lib/error";
-import { HttpError } from "@quenti/lib/http-error";
-import { cancelOrganizationSubscription, stripe } from "@quenti/payments";
-import { deactivateOrgDomains } from "@quenti/trpc/server/lib/orgs/domains";
+import { disbandOrgUsers } from "@studyapp/enterprise/users";
+import { env } from "@studyapp/env/server";
+import { getErrorFromUnknown } from "@studyapp/lib/error";
+import { HttpError } from "@studyapp/lib/http-error";
+import { cancelOrganizationSubscription, stripe } from "@studyapp/payments";
+import { deactivateOrgDomains } from "@studyapp/trpc/server/lib/orgs/domains";
 
 export const config = {
   api: {

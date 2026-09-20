@@ -1,7 +1,7 @@
 import { StudySetVisibility } from "@prisma/client";
 import { z } from "zod";
 
-import { LANGUAGE_VALUES } from "@quenti/core";
+import { LANGUAGE_VALUES } from "@studyapp/core";
 
 export const ZCreateCollaborativeSchema = z.object({
   classId: z.string().cuid(),

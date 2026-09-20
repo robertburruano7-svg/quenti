@@ -1,4 +1,4 @@
-import { bulkJoinOrgUsers } from "@quenti/enterprise/users";
+import { bulkJoinOrgUsers } from "@studyapp/enterprise/users";
 
 import { TRPCError } from "@trpc/server";
 

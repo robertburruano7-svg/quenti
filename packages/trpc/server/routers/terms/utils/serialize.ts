@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 
-import { getPlainText, getRichTextJson } from "@quenti/lib/editor";
+import { getPlainText, getRichTextJson } from "@studyapp/lib/editor";
 
 import { MAX_TERM } from "../../../common/constants";
 import { censorRichText, profanity } from "../../../common/profanity";

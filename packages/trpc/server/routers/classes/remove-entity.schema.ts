@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { EntityType } from "@quenti/prisma/client";
+import { EntityType } from "@studyapp/prisma/client";
 
 export const ZRemoveEntitySchema = z.object({
   classId: z.string().cuid2(),

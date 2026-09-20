@@ -9,7 +9,7 @@ import Typography from "@tiptap/extension-typography";
 import Underline from "@tiptap/extension-underline";
 import type { Extension, useEditor } from "@tiptap/react";
 
-import { HighlightExtension } from "@quenti/lib/editor";
+import { HighlightExtension } from "@studyapp/lib/editor";
 
 import { EmojiReplacer } from "./extensions/emoji-replacer";
 

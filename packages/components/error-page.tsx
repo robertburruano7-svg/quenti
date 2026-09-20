@@ -1,4 +1,4 @@
-import { SUPPORT_EMAIL } from "@quenti/lib/constants/email";
+import { SUPPORT_EMAIL } from "@studyapp/lib/constants/email";
 
 import {
   Box,
@@ -158,7 +158,7 @@ export const ErrorPage = () => {
             </Button>
             <Button
               as={Link}
-              href="https://status.quenti.io"
+              href="https://status.studyapp.example"
               variant="ghost"
               colorScheme="gray"
             >

@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/client";
-import { deleteAvatar } from "@quenti/images/server";
+import { env } from "@studyapp/env/client";
+import { deleteAvatar } from "@studyapp/images/server";
 
 import type { NonNullableUserContext } from "../../lib/types";
 

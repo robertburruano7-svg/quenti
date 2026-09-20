@@ -5,9 +5,9 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { Link } from "@studyapp/components";
+import { HeadSeo } from "@studyapp/components/head-seo";
+import { WEBSITE_URL } from "@studyapp/lib/constants/url";
 
 import {
   Box,
@@ -171,7 +171,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
                     <Logo width={24} height={24} />
                     <Heading fontSize="24px" textAlign="center">
                       {mode == "signup"
-                        ? "Create your Quenti account"
+                        ? "Create your Studyapp account"
                         : "Welcome back"}
                     </Heading>
                     <form

@@ -2,10 +2,10 @@ import type { GetServerSidePropsContext } from "next";
 import { type AxiomAPIRequest, log } from "next-axiom";
 import superjson from "superjson";
 
-import { getServerAuthSession } from "@quenti/auth";
-import { createServerSideHelpers } from "@quenti/trpc/react/server";
-import { createContext } from "@quenti/trpc/server/context";
-import { appRouter } from "@quenti/trpc/server/root";
+import { getServerAuthSession } from "@studyapp/auth";
+import { createServerSideHelpers } from "@studyapp/trpc/react/server";
+import { createContext } from "@studyapp/trpc/server/context";
+import { appRouter } from "@studyapp/trpc/server/root";
 
 export const ssrInit = async (context: GetServerSidePropsContext) => {
   const ctx = createContext({

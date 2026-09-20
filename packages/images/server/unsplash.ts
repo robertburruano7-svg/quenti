@@ -2,7 +2,7 @@ import { createApi } from "unsplash-js";
 import type { ApiResponse } from "unsplash-js/dist/helpers/response";
 import type { Photos } from "unsplash-js/dist/methods/search/types/response";
 
-import { env } from "@quenti/env/server";
+import { env } from "@studyapp/env/server";
 
 import { cache } from "./redis";
 import { md5Hash } from "./utils";

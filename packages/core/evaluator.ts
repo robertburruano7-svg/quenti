@@ -1,4 +1,4 @@
-import type { MultipleAnswerMode } from "@quenti/prisma/client";
+import type { MultipleAnswerMode } from "@studyapp/prisma/client";
 
 import type { Language } from "./language";
 

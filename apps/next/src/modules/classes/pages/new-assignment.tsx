@@ -5,7 +5,7 @@ import React from "react";
 import { FormProvider, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Button, ButtonGroup, Flex, Skeleton, Stack } from "@chakra-ui/react";
 

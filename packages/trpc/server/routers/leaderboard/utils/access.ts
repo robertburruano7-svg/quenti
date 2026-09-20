@@ -1,4 +1,4 @@
-import type { StudySet } from "@quenti/prisma/client";
+import type { StudySet } from "@studyapp/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

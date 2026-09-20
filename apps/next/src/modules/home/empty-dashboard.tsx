@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { FrameLogo, Link } from "@quenti/components";
+import { FrameLogo, Link } from "@studyapp/components";
 
 import {
   Box,

@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { log } from "next-axiom";
 import React from "react";
 
-import { Link } from "@quenti/components";
+import { Link } from "@studyapp/components";
 
 import {
   Button,

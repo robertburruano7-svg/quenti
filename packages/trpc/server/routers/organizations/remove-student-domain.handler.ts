@@ -1,4 +1,4 @@
-import { disbandOrgUsersByDomain } from "@quenti/enterprise/users";
+import { disbandOrgUsersByDomain } from "@studyapp/enterprise/users";
 
 import { TRPCError } from "@trpc/server";
 

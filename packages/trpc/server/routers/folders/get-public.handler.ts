@@ -1,4 +1,4 @@
-import type { Term } from "@quenti/prisma/client";
+import type { Term } from "@studyapp/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

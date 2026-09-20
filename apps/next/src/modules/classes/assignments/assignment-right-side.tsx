@@ -1,6 +1,6 @@
-import { Link } from "@quenti/components/link";
-import type { User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Link } from "@studyapp/components/link";
+import type { User } from "@studyapp/prisma/client";
+import { api } from "@studyapp/trpc";
 
 import {
   Avatar,

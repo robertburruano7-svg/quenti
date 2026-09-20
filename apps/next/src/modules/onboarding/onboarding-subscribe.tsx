@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@studyapp/components";
 
 import {
   Button,
@@ -50,11 +50,11 @@ export const OnboardingSubscribe = () => {
             </Stack>
             <Button
               as={Link}
-              href="https://twitter.com/quentiapp"
+              href="https://twitter.com/studyapp"
               leftIcon={<IconBrandX size={18} />}
               w={{ base: "full", md: "auto" }}
             >
-              @quentiapp
+              @studyapp
             </Button>
           </Flex>
         </Card>

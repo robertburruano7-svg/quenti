@@ -1,10 +1,10 @@
 import React from "react";
 
-import type { TermWithDistractors } from "@quenti/interfaces";
+import type { TermWithDistractors } from "@studyapp/interfaces";
 import type {
   StudiableTerm,
   StudiableTermWithDistractors,
-} from "@quenti/interfaces/studiable-term";
+} from "@studyapp/interfaces/studiable-term";
 
 import { useAuthedSet } from "../hooks/use-set";
 import {

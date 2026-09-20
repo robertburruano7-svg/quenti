@@ -1,7 +1,7 @@
 import type { JSONContent } from "@tiptap/core";
 import React from "react";
 
-import { isRectInBounds } from "@quenti/lib/area";
+import { isRectInBounds } from "@studyapp/lib/area";
 
 import { type MatchItem, useMatchContext } from "../../stores/use-match-store";
 

@@ -1,8 +1,8 @@
 import all from "email-providers/all.json" assert { type: "json" };
 
-import { sendConfirmCodeEmail } from "@quenti/emails";
-import { disbandOrgUsersByDomain } from "@quenti/enterprise/users";
-import { env } from "@quenti/env/server";
+import { sendConfirmCodeEmail } from "@studyapp/emails";
+import { disbandOrgUsersByDomain } from "@studyapp/enterprise/users";
+import { env } from "@studyapp/env/server";
 
 import { TRPCError } from "@trpc/server";
 

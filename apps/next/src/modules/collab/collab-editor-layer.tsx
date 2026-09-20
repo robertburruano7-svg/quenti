@@ -1,8 +1,8 @@
 import React from "react";
 
-import type { Language } from "@quenti/core";
-import { richTextToHtml } from "@quenti/lib/editor";
-import { type RouterOutputs, api } from "@quenti/trpc";
+import type { Language } from "@studyapp/core";
+import { richTextToHtml } from "@studyapp/lib/editor";
+import { type RouterOutputs, api } from "@studyapp/trpc";
 
 import { type Context, editorEventChannel } from "../../events/editor";
 import {

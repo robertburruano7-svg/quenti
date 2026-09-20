@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
-import type { User } from "@quenti/prisma/client";
+import { Link } from "@studyapp/components";
+import type { User } from "@studyapp/prisma/client";
 
 import {
   Avatar,

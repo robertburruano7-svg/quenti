@@ -3,9 +3,9 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
-import { EnabledFeature } from "@quenti/lib/feature";
+import { Link } from "@studyapp/components";
+import { avatarUrl } from "@studyapp/lib/avatar";
+import { EnabledFeature } from "@studyapp/lib/feature";
 
 import {
   Avatar,

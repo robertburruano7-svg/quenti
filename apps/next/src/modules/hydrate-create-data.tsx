@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { editorEventChannel } from "../events/editor";
 import { useLoading } from "../hooks/use-loading";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { FacingTerm, StudiableTerm } from "@quenti/interfaces";
+import type { FacingTerm, StudiableTerm } from "@studyapp/interfaces";
 
 import { RootFlashcardContext } from "../components/root-flashcard-wrapper";
 import { queryEventChannel } from "../events/query";

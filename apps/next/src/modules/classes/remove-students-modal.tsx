@@ -1,7 +1,7 @@
-import { Modal } from "@quenti/components/modal";
-import { avatarUrl } from "@quenti/lib/avatar";
-import type { User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@studyapp/components/modal";
+import { avatarUrl } from "@studyapp/lib/avatar";
+import type { User } from "@studyapp/prisma/client";
+import { api } from "@studyapp/trpc";
 
 import {
   Avatar,

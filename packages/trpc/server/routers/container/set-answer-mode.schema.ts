@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { StudySetAnswerMode } from "@quenti/prisma/client";
+import { StudySetAnswerMode } from "@studyapp/prisma/client";
 
 export const ZSetAnswerModeSchema = z.object({
   entityId: z.string(),

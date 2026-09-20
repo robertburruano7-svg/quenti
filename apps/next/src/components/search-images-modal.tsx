@@ -1,11 +1,11 @@
 import Compressor from "compressorjs";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { BgGradient } from "@quenti/components/bg-gradient";
-import { env } from "@quenti/env/client";
-import { useDebounce } from "@quenti/lib/hooks/use-debounce";
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { Link } from "@studyapp/components";
+import { BgGradient } from "@studyapp/components/bg-gradient";
+import { env } from "@studyapp/env/client";
+import { useDebounce } from "@studyapp/lib/hooks/use-debounce";
+import { type RouterOutputs, api } from "@studyapp/trpc";
 
 import {
   Box,
@@ -293,7 +293,7 @@ export const SearchImagesModal: React.FC<SearchImagesModalProps> = ({
           <Text mt="3" fontSize="xs" ml="3" color="gray.500" opacity={0.75}>
             Images by{" "}
             <Link
-              href="https://unsplash.com/?utm_source=quenti&utm_medium=referral"
+              href="https://unsplash.com/?utm_source=studyapp&utm_medium=referral"
               fontWeight={600}
               transition="color 0.15s ease-in-out"
               color="gray.600"
@@ -552,7 +552,7 @@ const Thumbnail: React.FC<{ index: number }> = ({ index }) => {
             <Box w="full" overflow="hidden" textOverflow="ellipsis">
               <Text
                 as={Link}
-                href={`${image.user.links.html}?utm_source=quenti&utm_medium=referral`}
+                href={`${image.user.links.html}?utm_source=studyapp&utm_medium=referral`}
                 overflow="hidden"
                 target="_blank"
                 fontSize="10px"

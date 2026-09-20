@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { FacingTerm } from "@quenti/interfaces";
+import type { FacingTerm } from "@studyapp/interfaces";
 
 import { Box, Card, Center, Flex, HStack, Text } from "@chakra-ui/react";
 

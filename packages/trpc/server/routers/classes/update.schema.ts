@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { BANNER_COLORS } from "@quenti/lib/color";
+import { BANNER_COLORS } from "@studyapp/lib/color";
 
 export const ZUpdateSchema = z.object({
   id: z.string().cuid2(),

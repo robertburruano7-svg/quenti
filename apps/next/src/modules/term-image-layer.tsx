@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { type Context, editorEventChannel } from "../events/editor";
 

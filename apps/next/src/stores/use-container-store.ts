@@ -6,7 +6,7 @@ import type {
   LimitedStudySetAnswerMode,
   MultipleAnswerMode,
   StudySetAnswerMode,
-} from "@quenti/prisma/client";
+} from "@studyapp/prisma/client";
 
 export interface ContainerStoreProps {
   shuffleFlashcards: boolean;

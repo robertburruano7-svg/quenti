@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import React from "react";
 
-import { Link } from "@quenti/components";
+import { Link } from "@studyapp/components";
 
 import {
   MenuItem,

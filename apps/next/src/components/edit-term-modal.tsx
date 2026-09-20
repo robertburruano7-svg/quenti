@@ -1,16 +1,16 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import type { FacingTerm } from "@quenti/interfaces";
+import { Modal } from "@studyapp/components/modal";
+import type { FacingTerm } from "@studyapp/interfaces";
 import {
   type EditorTerm,
   editorInput,
   getPlainText,
   hasRichText,
   richTextToHtml,
-} from "@quenti/lib/editor";
-import { api } from "@quenti/trpc";
+} from "@studyapp/lib/editor";
+import { api } from "@studyapp/trpc";
 
 import { Box, Button, ButtonGroup, Stack } from "@chakra-ui/react";
 

@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@studyapp/trpc";
 
 import { Button, Grid, GridItem } from "@chakra-ui/react";
 

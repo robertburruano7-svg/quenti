@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { ContainerType } from "@quenti/prisma/client";
+import { ContainerType } from "@studyapp/prisma/client";
 
 export const ZSetShuffleSchema = z.object({
   entityId: z.string(),

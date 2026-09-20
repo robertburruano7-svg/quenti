@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-import { BODY_COPY_BASE } from "@quenti/branding";
-import { HeadSeo } from "@quenti/components/head-seo";
+import { BODY_COPY_BASE } from "@studyapp/branding";
+import { HeadSeo } from "@studyapp/components/head-seo";
 
 import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react";
 
@@ -26,7 +26,7 @@ export const OnboardingIntro = () => {
   return (
     <Box>
       <HeadSeo
-        title="Welcome to Quenti"
+        title="Welcome to Studyapp"
         hideTitleSuffix
         nextSeoProps={{
           noindex: true,
@@ -51,7 +51,7 @@ const Intro = () => {
       <motion.div {...ghost}>
         <Logo width={24} height={24} />
       </motion.div>
-      <Heading size="3xl">Welcome to Quenti</Heading>
+      <Heading size="3xl">Welcome to Studyapp</Heading>
       <Text fontWeight={500}>{BODY_COPY_BASE}</Text>
       <Button
         mt="4"

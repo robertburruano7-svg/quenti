@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-import { EnabledFeature } from "@quenti/lib/feature";
+import { EnabledFeature } from "@studyapp/lib/feature";
 
 import { createTRPCRouter, lockedProcedure } from "../trpc";
 
