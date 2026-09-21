@@ -58,3 +58,7 @@ yarn-error.log*
 .react-email
 
 .turbo
+
+# Generated macOS app bundle (bun run make:app)
+*.app/
+*.iconset/

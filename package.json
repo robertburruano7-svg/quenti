@@ -12,10 +12,9 @@
     "build": "dotenv -- turbo build --filter @studyapp/next...",
     "clean": "find . -name node_modules -o -name .next -o -name .turbo -o -name dist -type d -prune | xargs rm -rf",
     "clean:workspaces": "turbo clean",
-    "db:setup": "dotenv -- bun prisma seed",
-    "db:generate": "dotenv -- turbo db:generate",
-    "db:push": "dotenv -- turbo db:push db:generate",
-    "db:studio": "dotenv -- bun -F db dev",
+    "db:generate": "dotenv -- bun run --cwd packages/prisma generate",
+    "db:push": "dotenv -- bun run --cwd packages/prisma db:push",
+    "db:studio": "dotenv -- bun run --cwd packages/prisma db:studio",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\"",
     "lint": "dotenv -- turbo lint",
     "lint:fix": "turbo lint:fix",
@@ -33,7 +32,8 @@
     "sets:pull": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/sets-pull.ts",
     "sets:sync": "git pull --ff-only && bun run sets:push",
     "stripe-webhook": "stripe listen --forward-to localhost:3000/api/stripe/webhook",
-    "setup:local": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/setup-local.ts"
+    "setup:local": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/setup-local.ts",
+    "make:app": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/make-app.ts"
   },
   "dependencies": {
     "@prisma/client": "5.5.2",

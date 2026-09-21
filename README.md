@@ -50,6 +50,39 @@ Then open http://localhost:3000.
 _If Homebrew MySQL gives you trouble, `docker-compose -f docker-compose.mysql.yml up -d`
 still works; point `DATABASE_URL` at `mysql://user:password@127.0.0.1:3306/db`._
 
+### Make it an app
+
+```sh
+bun run make:app
+```
+
+Builds `Studyapp.app` in the project folder. Drag it to `/Applications` or your
+Dock and double-click: it starts MySQL if it is down, starts the server, and
+opens a window with no address bar or tabs. Closing the window stops the server.
+
+The project path is baked into the bundle, because an app launched from Finder
+starts in `/` and inherits none of your shell's environment. **Re-run
+`make:app` if you move the repo.**
+
+It uses its own Chrome profile under
+`~/Library/Application Support/Studyapp`, so the window is independent of your
+normal browsing and keeps its own login session. Without Chrome installed it
+falls back to your default browser.
+
+Anything that goes wrong is written to `~/Library/Logs/Studyapp/launcher.log`
+and raised as a dialog, since an app launched from Finder has nowhere to print.
+
+Two things it deliberately refuses to do. If port 3000 is held by something
+that is not this app, it stops and says so rather than starting: `next dev`
+would otherwise move to 3001 while `.env` still points at 3000, which breaks
+sign-in in a way that is hard to diagnose. And if `.env` is missing it points
+you at `setup:local` instead of failing silently.
+
+The app runs the dev server rather than a production build, so the first page
+after launch takes a few seconds to compile. That is deliberate: a production
+build requires Google credentials and stops the magic-link sign-in from being
+printed.
+
 ### Signing in
 
 Google is the only OAuth provider, and you do not need it. Go to
