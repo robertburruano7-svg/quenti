@@ -5,6 +5,31 @@ in `apps/next`, backed by a hosted MySQL database. The marketing site, admin
 console and integrations packages live in private upstream repositories and are
 not part of this fork, so this deploys the app only.
 
+## Cost
+
+Everything below is free, with no card required and no trial clock.
+
+| Piece    | Free tier                    |
+| -------- | ---------------------------- |
+| Hosting  | Vercel Hobby                 |
+| Database | TiDB Cloud Starter           |
+| Sign-in  | Google OAuth                 |
+| Domain   | the `*.vercel.app` subdomain |
+
+**Vercel Hobby is personal, non-commercial use only.** That is a licence term,
+not a soft limit: running anything revenue-generating on it requires Pro.
+
+The optional services are the only way to spend money here, and the app runs
+without all of them. See the table at the end of this document for what each one
+switches on.
+
+## Running it locally instead
+
+To open the app without deploying anything, see
+[Running Locally](./README.md#running-locally) in the README. Google credentials
+are optional outside production and sign-in uses a magic link printed to the
+terminal, so a local instance needs no accounts at all.
+
 ## Node version
 
 The build requires **Node 20 or newer**. There is no upper bound: the import
@@ -13,10 +38,28 @@ so Node 22 and 24 both build cleanly.
 
 ## 1. Database
 
-Provision a MySQL 8 database anywhere that gives you a connection string.
-The Prisma schema sets `relationMode = "prisma"`, so foreign keys are enforced
-in the application rather than the database, and any plain MySQL host works.
-Check current pricing before committing to a provider; free tiers move around.
+Any MySQL 8 host that gives you a connection string works. The Prisma schema
+sets `relationMode = "prisma"`, so foreign keys are enforced in the application
+rather than the database, which means hosts that forbid foreign keys are fine
+too.
+
+**Recommended: [TiDB Cloud Starter](https://tidbcloud.com).** MySQL-compatible,
+free with no time limit, and it is not deleted for inactivity. It hibernates
+after about a day idle and wakes on the next connection, so expect one slow
+query after a quiet spell.
+
+Two alternatives were considered and rejected for this use case. Aiven's free
+MySQL powers off after a period of inactivity, and Supabase would mean migrating
+to Postgres. Both are fine if you use the app daily; neither suits something
+opened a few times a week.
+
+**TiDB requires TLS.** Append `?sslaccept=strict` to the connection string:
+
+```
+mysql://user:password@host:4000/dbname?sslaccept=strict
+```
+
+Without it Prisma fails with a handshake error that does not mention TLS.
 
 Once you have a `DATABASE_URL`, create the schema from your machine:
 
@@ -28,6 +71,18 @@ bun prisma db:push
 
 `db:push` applies the schema directly. There are no migration files in this
 repo, so treat the schema as the source of truth.
+
+The `sets:push` and `sets:pull` scripts read the same `DATABASE_URL`, so they
+work against a hosted database unchanged. See [seeds/README.md](./seeds/README.md).
+
+### A note on MySQL compatibility
+
+TiDB is MySQL-compatible rather than MySQL. The app's card editor uses raw
+`INSERT ... ON DUPLICATE KEY UPDATE` statements for reordering and shuffle
+state, which TiDB supports, but this fork has not been exercised against it.
+After deploying, create a set, reorder its cards, and run one round of Learn.
+That exercises every one of those queries. If card order survives, you are
+clear.
 
 ## 2. Google OAuth
 

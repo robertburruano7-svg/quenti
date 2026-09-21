@@ -1,11 +1,3 @@
-import type { GetServerSidePropsContext } from "next";
-
-import { db, eq } from "@studyapp/drizzle";
-import {
-  entityShare as entityShareTable,
-  folder as folderTable,
-} from "@studyapp/drizzle/schema";
-
 import { PageWrapper } from "../../common/page-wrapper";
 import { Generic404 } from "../../components/generic-404";
 import { getLayout } from "../../layouts/main-layout";
@@ -21,54 +13,13 @@ const ShareResolver = ({
   return <Generic404 />;
 };
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  if (!db) return { props: { entity: null } };
-
-  ctx.res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
-
-  const id = ctx.query?.id as string;
-
-  const entityShare = await db.query.entityShare.findFirst({
-    where: eq(entityShareTable.id, id.substring(1)),
-  });
-
-  if (!entityShare) return { props: { entity: null } };
-
-  if (entityShare.type == "StudySet") {
-    return {
-      redirect: {
-        permanent: false,
-        destination: `/${entityShare.entityId}`,
-      },
-    };
-  } else {
-    const folder = await db.query.folder.findFirst({
-      where: eq(folderTable.id, entityShare.entityId),
-      columns: {
-        id: true,
-        slug: true,
-      },
-      with: {
-        user: {
-          columns: {
-            username: true,
-          },
-        },
-      },
-    });
-
-    if (!folder) return { props: { entity: { type: entityShare.type } } };
-
-    return {
-      redirect: {
-        permanent: false,
-        destination: `/@${folder.user.username}/folders/${
-          folder.slug ?? folder.id
-        }`,
-      },
-    };
-  }
-};
+// The Drizzle/edge SSR layer this page used was removed: it was gated behind a
+// PLANETSCALE flag that was never set, so this branch is the only one that has
+// ever run. getServerSideProps is kept so the route stays server-rendered
+// rather than becoming a static page that would demand getStaticPaths.
+export const getServerSideProps = (): Promise<{
+  props: { entity: { type: string } | null };
+}> => Promise.resolve({ props: { entity: null } });
 
 ShareResolver.PageWrapper = PageWrapper;
 ShareResolver.getLayout = getLayout;

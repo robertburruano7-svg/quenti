@@ -74,7 +74,6 @@ let config = {
     "@studyapp/payments",
     "@studyapp/enterprise",
     "@studyapp/prisma",
-    "@studyapp/drizzle",
     "@studyapp/trpc",
     "@studyapp/inngest",
     "@studyapp/integrations",
