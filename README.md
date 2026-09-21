@@ -19,22 +19,57 @@ name is hardcoded.
 
 ## Running it on a Mac
 
-### Prerequisites
+One-time setup, starting from a Mac with nothing installed. Run the blocks in
+order; each assumes the previous one worked, so stop if something errors rather
+than pushing on. Nothing here needs Xcode: every native dependency ships a
+prebuilt `darwin-arm64` binary.
 
-- Node.js 20 or newer
-- [bun](https://bun.sh)
-- MySQL 8, via Homebrew
+### 1. Homebrew
 
-Nothing here needs Xcode. Every native dependency ships a prebuilt
-`darwin-arm64` binary.
-
-### Setup
+The `which brew ||` guard means this is safe to run if you already have it.
 
 ```sh
-brew install mysql
+which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew --version
+```
+
+Those two middle lines are not optional. On Apple Silicon the installer puts
+brew at `/opt/homebrew/bin`, which is not on the default `PATH`, so `brew` still
+reports "command not found" immediately after installing successfully. Stop here
+if `brew --version` prints nothing.
+
+### 2. bun, Node and MySQL
+
+**Do not skip this block.** The next one clones the project and looks
+self-contained, but nothing after this point works without bun.
+
+```sh
+brew install bun node mysql
+bun --version
+```
+
+Node is here because several binaries in the dependency tree carry a
+`#!/usr/bin/env node` shebang, and the scripts under `scripts/` run through
+`ts-node`. Stop here if `bun --version` prints nothing.
+
+### 3. The project and the database
+
+```sh
+git clone https://github.com/robertburruano7-svg/quenti ~/quenti
+cd ~/quenti
+
 brew services start mysql
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS studyapp"
+```
 
+`git` arrives with the Xcode command line tools, which the Homebrew installer
+pulls in, so by now you have it.
+
+### 4. Install and run
+
+```sh
 bun install
 bun run setup:local     # writes .env with generated secrets
 bun db:push             # creates the tables
@@ -46,6 +81,9 @@ regenerate your encryption key — doing that would invalidate every signed asse
 URL already in the database.
 
 Then open http://localhost:3000.
+
+That is setup done. Day to day it is just `bun dev`, or double-clicking the app
+built in the next section.
 
 _If Homebrew MySQL gives you trouble, `docker-compose -f docker-compose.mysql.yml up -d`
 still works; point `DATABASE_URL` at `mysql://user:password@127.0.0.1:3306/db`._
