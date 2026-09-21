@@ -76,9 +76,7 @@ let config = {
     "@studyapp/prisma",
     "@studyapp/trpc",
     "@studyapp/inngest",
-    "@studyapp/integrations",
     "@studyapp/types",
-    "@studyapp/website",
   ],
   headers: async () => [
     {

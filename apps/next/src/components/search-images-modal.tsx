@@ -182,6 +182,10 @@ export const SearchImagesModal: React.FC<SearchImagesModalProps> = ({
   }, []);
 
   const doUpload = async (jwt: string, blob: unknown) => {
+    // Matches the guard in upload-avatar-modal, use-class-logo-upload and
+    // use-org-logo-upload. Without it this PUTs to the string "undefined/terms".
+    if (!env.NEXT_PUBLIC_CDN_WORKER_ENDPOINT) return null;
+
     return new Promise((resolve) => {
       const xhr = new XMLHttpRequest();
 

@@ -4,9 +4,15 @@ Flashcards live in the database, not in this repo. These files are a tracked
 copy of chosen sets, plus two commands to move content in either direction.
 
 ```sh
+bun run sets:sync          # git pull, then load new or changed sets
 bun run sets:push          # repo files  ->  database
 bun run sets:pull          # database    ->  repo files
 ```
+
+**When Claude adds a set for you**, it commits a `.tsv` here. Run
+`bun run sets:sync` and it lands in your library. That is `git pull --ff-only`
+followed by `sets:push`, so you can always run the two halves separately if you
+want to read the diff first.
 
 The direction is always explicit. Neither command merges; push overwrites the
 database from the file, pull overwrites the file from the database. Drift
@@ -71,7 +77,7 @@ Push writes the new set's id and every card id back into the file. Commit that.
 ## Tracking a set you made in the app
 
 ```sh
-bun run sets:pull --set https://your-domain/clx1234567890abcdefghijkl
+bun run sets:pull --set http://localhost:3000/clx1234567890abcdefghijkl
 ```
 
 Accepts a full URL or a bare id. The file is named from the set's title. Pull

@@ -1,11 +1,9 @@
 # Studyapp
 
 A personal fork of [Quenti](https://github.com/quenti-io/quenti), the open-source
-Quizlet alternative. Renamed throughout: the workspace scope is `@studyapp/*`,
-the encryption key env var is `STUDYAPP_ENCRYPTION_KEY`, and the placeholder
-domain is `studyapp.example`.
+Quizlet alternative. It runs on one machine and is not deployed anywhere.
 
-`Studyapp` is a placeholder. To pick a real name, start at
+`Studyapp` is a placeholder name. To pick a real one, start at
 `packages/branding/index.ts` — the header comment lists every other place the
 name is hardcoded.
 
@@ -18,149 +16,115 @@ name is hardcoded.
 - [Chakra UI](https://chakra-ui.com)
 - [MySQL](http://mysql.org/)
 - [Zustand](https://github.com/pmndrs/zustand)
-- [ClickHouse](https://clickhouse.tech/)
 
-## Running Locally
-
-Get up and running by following these steps.
+## Running it on a Mac
 
 ### Prerequisites
 
-- Node.js 20.x or newer
-- MySQL
-- Bun
-- Docker and docker-compose _(recommended)_
+- Node.js 20 or newer
+- [bun](https://bun.sh)
+- MySQL 8, via Homebrew
+
+Nothing here needs Xcode. Every native dependency ships a prebuilt
+`darwin-arm64` binary.
 
 ### Setup
 
-1. Clone the repo
-
-   ```sh
-   git clone https://github.com/robertburruano7-svg/quenti
-   ```
-
-2. Go to the project folder
-
-   ```sh
-   cd quenti
-   ```
-
-3. Install dependencies with bun
-
-   ```sh
-   bun i
-   ```
-
-4. Set up the `.env` file
-
-   - Copy `.env.example` to `.env`
-   - Use `openssl rand -base64 32` to generate a key for `NEXTAUTH_SECRET` and set it as the value in `.env`
-   - Use `openssl rand -base64 24` to generate a key for `STUDYAPP_ENCRYPTION_KEY` and set it as the value in `.env`
-   - That is enough to start the app. `.env.example` already points at the
-     database from `docker-compose.mysql.yml`, and Google credentials are
-     optional outside production, so you can skip the rest of this step and
-     sign in with a magic link (see [Signing in](#signing-in) below).
-   - _Optional:_ to use Google sign-in locally, create an OAuth client ID from the [Google API Console](https://console.developers.google.com/). There are plenty of guides for this, like [this one from LogRocket](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#create-a-google-oauth-app) embedded:
-
-     > ![Google OAuth Client Screenshot](https://files.readme.io/eca93af-GCPStep2OAuth.png)
-     >
-     > Navigate to Credentials and click on Create credentials, and then OAuth client ID. You will be asked to fill in the following:
-     >
-     > **Choose an Application Type**: Select Web Application
-     >
-     > **Name**: This is the name of your application
-     >
-     > **Authorized JavaScript origins**: This is the full URL to the homepage of our app. Since we are still in development mode, we are going to fill in the full URL our development server is running on. In this case, it is `http://localhost:3000`
-     >
-     > **Authorized redirect URIs**: Users will be redirected to this path after they have authenticated with Google: `http://localhost:3000/api/auth/callback/google`
-
-     Copy your client ID and secret created and fill in the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` values in `.env`
-
-     ![ID and Secret Screenshot](https://files.readme.io/a136be9-GCPOAuthstep5.png)
-
-5. Start up a local MySQL database with
-
-   ```sh
-   docker-compose -f docker-compose.mysql.yml up
-   ```
-
-6. Push schema changes and generate the Prisma client
-   ```sh
-   bun prisma db:push
-   ```
-
-### Running
-
-Start a development server with
-
 ```sh
+brew install mysql
+brew services start mysql
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS studyapp"
+
+bun install
+bun run setup:local     # writes .env with generated secrets
+bun db:push             # creates the tables
 bun dev
 ```
 
-or create and start a production build with
+`setup:local` refuses to run if `.env` already exists, so it will not quietly
+regenerate your encryption key — doing that would invalidate every signed asset
+URL already in the database.
 
-```
-bun run build
-bun start
-```
+Then open http://localhost:3000.
 
-Navigate to http://localhost:3000 and Studyapp should be up and running!
+_If Homebrew MySQL gives you trouble, `docker-compose -f docker-compose.mysql.yml up -d`
+still works; point `DATABASE_URL` at `mysql://user:password@127.0.0.1:3306/db`._
 
 ### Signing in
 
-Google is the only OAuth provider, but you do not need it locally. Go to
+Google is the only OAuth provider, and you do not need it. Go to
 http://localhost:3000/auth/login, enter any email address, and press the arrow.
-In development the sign-in link is printed to the terminal running `bun dev`:
+The sign-in link is printed to the terminal running `bun dev`:
 
 ```
   Magic link for you@example.com:
   http://localhost:3000/api/auth/callback/magic?token=...
 ```
 
-Paste that into the browser. Nothing is bypassed: the token is still required
-and still expires, it is just delivered to your terminal instead of an inbox,
-because `RESEND_API_KEY` is unset. The link is only ever printed when
-`NODE_ENV` is exactly `development`.
+Paste it into the browser. Nothing is bypassed: the token is still required and
+still expires, it is just delivered to your terminal instead of an inbox,
+because `RESEND_API_KEY` is unset. The link is only printed when `NODE_ENV` is
+exactly `development`.
 
 First sign-in drops you into `/onboarding`, which you have to finish before the
 rest of the app will load: theme, username, account type, then done. Picking a
 username matters beyond onboarding — the API rejects every request from a user
 without one.
 
-One wart: the Google button still renders on the login page even when no
-credentials are configured, and clicking it will error. The button list is
-hardcoded rather than read from the configured providers. Use the email box.
+One wart: the Google button still renders on the login page and will error if
+clicked, because the button list is hardcoded rather than read from the
+configured providers. Use the email box.
+
+### What it talks to
+
+A local run makes no analytics, error-reporting or logging calls. Highlight,
+Axiom, Jitsu, ClickHouse, Upstash, Resend, Unsplash and HuggingFace are each
+gated on an API key that is unset, and Inngest is pinned to dev mode so it
+never reaches Inngest Cloud.
+
+Two outbound calls do happen. `next/font/google` downloads the Outfit and Open
+Sans woff2 files on first compile and then self-hosts them, so a cold build with
+no network fails. And `next/image` fetches `lh3.googleusercontent.com` only if
+you sign in with Google, which the magic-link flow avoids.
+
+### Optional services
+
+The app runs on the defaults above. These stay off until you add credentials:
+
+| Feature                                        | Needs                                                           |
+| ---------------------------------------------- | --------------------------------------------------------------- |
+| Invite emails, magic links by email            | `RESEND_API_KEY`, `EMAIL_SENDER`                                |
+| Image uploads on cards                         | Cloudflare R2 plus the CDN worker, removed from this fork       |
+| Background jobs (Quizlet import, bulk invites) | An Inngest dev server on port 8288                              |
+| Unsplash image search                          | `UNSPLASH_ACCESS_KEY`                                           |
+| Cortex answer grading                          | `COHERE_API_KEY`, `HUGGINGFACE_ENDPOINT`, `HUGGINGFACE_API_KEY` |
+| Organization billing                           | The `STRIPE_*` variables                                        |
+| Organization analytics                         | The `CLICKHOUSE_*` variables                                    |
+
+Set `BYPASS_ORG_DOMAIN_BLACKLIST=true` to test organization features with a
+personal email address.
+
+### A note on `bun run build`
+
+Use `bun dev`. Building sets `NODE_ENV=production`, which flips
+`NEXTAUTH_SECRET` and the Google credentials to required in the env schema, so a
+build fails on a setup that has no OAuth client.
 
 ## Flashcards in the repo
 
-Cards live in the database, but chosen sets can be tracked as files under
+Cards live in the database, but chosen sets are tracked as files under
 `seeds/sets/` and synced in either direction:
 
 ```sh
-bun run sets:push          # repo files  ->  database
-bun run sets:pull          # database    ->  repo files
+bun run sets:sync    # git pull, then load any new or changed sets
+bun run sets:pull    # database -> repo files
 ```
 
-See [seeds/README.md](./seeds/README.md) for the file format and flags. For a
-one-off import with no files involved, the set editor's Import button accepts
-tab-separated cards pasted directly.
+`sets:sync` is the one to run after Claude commits a set. See
+[seeds/README.md](./seeds/README.md) for the file format and the flags.
 
-## Hosting
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for deploying the app to Vercel: the
-required environment variables, the Google OAuth setup, and which features stay
-off until you add optional service credentials.
-
-The whole stack runs on free tiers — Vercel Hobby for hosting, TiDB Cloud
-Starter for the database, Google OAuth for sign-in — with no card required.
-
-## Private submodules
-
-`apps/website`, `packages/console`, and `packages/integrations` are git
-submodules pointing at private `quenti-io` repositories. They are not part of
-this fork and cannot be cloned without access, so `.gitmodules` and
-`install-vercel.sh` still reference upstream. The Next.js app builds without
-them; the marketing site and admin console do not.
+For a one-off import with no files involved, the set editor's Import button
+accepts tab-separated cards pasted directly.
 
 ## Assets still carrying upstream branding
 

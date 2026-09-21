@@ -25,14 +25,15 @@
     "next": "dotenv -- bun run --cwd apps/next",
     "website": "dotenv -- bun run --cwd apps/website",
     "prisma": "dotenv -- bun run --cwd packages/prisma",
-    "install-vercel": "sh ./install-vercel.sh",
     "email-dev": "dotenv -- npx email dev --dir packages/emails/templates --port 3001",
     "generate-org-students": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/generate-org-students.ts",
     "generate-assignment-submissions": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/generate-assignment-submissions.ts",
     "join-class-students": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/join-class-students.ts",
     "sets:push": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/sets-push.ts",
     "sets:pull": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/sets-pull.ts",
-    "stripe-webhook": "stripe listen --forward-to localhost:3000/api/stripe/webhook"
+    "sets:sync": "git pull --ff-only && bun run sets:push",
+    "stripe-webhook": "stripe listen --forward-to localhost:3000/api/stripe/webhook",
+    "setup:local": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/setup-local.ts"
   },
   "dependencies": {
     "@prisma/client": "5.5.2",
@@ -68,5 +69,11 @@
   "workspaces": [
     "apps/*",
     "packages/*"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "@prisma/client",
+    "prisma",
+    "esbuild"
   ]
 }
