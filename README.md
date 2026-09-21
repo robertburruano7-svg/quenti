@@ -56,7 +56,11 @@ Get up and running by following these steps.
    - Copy `.env.example` to `.env`
    - Use `openssl rand -base64 32` to generate a key for `NEXTAUTH_SECRET` and set it as the value in `.env`
    - Use `openssl rand -base64 24` to generate a key for `STUDYAPP_ENCRYPTION_KEY` and set it as the value in `.env`
-   - You'll need to create a Google OAuth client ID from the [Google API Console](https://console.developers.google.com/). There are plenty of guides for this, like [this one from LogRocket](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#create-a-google-oauth-app) embedded:
+   - That is enough to start the app. `.env.example` already points at the
+     database from `docker-compose.mysql.yml`, and Google credentials are
+     optional outside production, so you can skip the rest of this step and
+     sign in with a magic link (see [Signing in](#signing-in) below).
+   - _Optional:_ to use Google sign-in locally, create an OAuth client ID from the [Google API Console](https://console.developers.google.com/). There are plenty of guides for this, like [this one from LogRocket](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#create-a-google-oauth-app) embedded:
 
      > ![Google OAuth Client Screenshot](https://files.readme.io/eca93af-GCPStep2OAuth.png)
      >
@@ -101,6 +105,31 @@ bun start
 ```
 
 Navigate to http://localhost:3000 and Studyapp should be up and running!
+
+### Signing in
+
+Google is the only OAuth provider, but you do not need it locally. Go to
+http://localhost:3000/auth/login, enter any email address, and press the arrow.
+In development the sign-in link is printed to the terminal running `bun dev`:
+
+```
+  Magic link for you@example.com:
+  http://localhost:3000/api/auth/callback/magic?token=...
+```
+
+Paste that into the browser. Nothing is bypassed: the token is still required
+and still expires, it is just delivered to your terminal instead of an inbox,
+because `RESEND_API_KEY` is unset. The link is only ever printed when
+`NODE_ENV` is exactly `development`.
+
+First sign-in drops you into `/onboarding`, which you have to finish before the
+rest of the app will load: theme, username, account type, then done. Picking a
+username matters beyond onboarding — the API rejects every request from a user
+without one.
+
+One wart: the Google button still renders on the login page even when no
+credentials are configured, and clicking it will error. The button list is
+hardcoded rather than read from the configured providers. Use the email box.
 
 ## Flashcards in the repo
 

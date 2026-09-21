@@ -11,6 +11,16 @@ import { CustomPrismaAdapter } from "./prisma-adapter";
 
 const version = pjson.version;
 
+// NextAuth's public Provider union omits the "email" type even though the
+// runtime supports it, so this needs a cast. Declared here rather than inline:
+// a `@ts-expect-error` inside the array stops applying as soon as the array
+// contains a spread, because the error is then reported on the spread instead.
+const magicProvider = {
+  id: "magic",
+  type: "email",
+  sendVerificationRequest,
+} as unknown as NextAuthOptions["providers"][number];
+
 export const authOptions: NextAuthOptions = {
   // Include user.id on session
   callbacks: {
@@ -62,17 +72,19 @@ export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   adapter: CustomPrismaAdapter(prisma),
   providers: [
-    GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-      allowDangerousEmailAccountLinking: true,
-    }),
-    // @ts-expect-error Type '"email"' is not assignable
-    {
-      id: "magic",
-      type: "email",
-      sendVerificationRequest,
-    },
+    // Passing an undefined clientId fails at runtime in a way that is hard to
+    // diagnose, so leave the provider out entirely when it is not configured.
+    // The env schema still requires these in production.
+    ...(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET
+      ? [
+          GoogleProvider({
+            clientId: env.GOOGLE_CLIENT_ID,
+            clientSecret: env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
+          }),
+        ]
+      : []),
+    magicProvider,
     /**
      * ...add more providers here
      *

@@ -17,8 +17,16 @@ export const env = createEnv({
       process.env.VERCEL ? z.string() : z.string().url(),
     ),
     STUDYAPP_ENCRYPTION_KEY: z.string().length(32),
-    GOOGLE_CLIENT_ID: z.string(),
-    GOOGLE_CLIENT_SECRET: z.string(),
+    // Required in production, optional elsewhere so that `bun dev` can start
+    // without an OAuth client. Sign in locally with the magic link instead.
+    GOOGLE_CLIENT_ID:
+      process.env.NODE_ENV === "production"
+        ? z.string()
+        : z.string().optional(),
+    GOOGLE_CLIENT_SECRET:
+      process.env.NODE_ENV === "production"
+        ? z.string()
+        : z.string().optional(),
     METRICS_API_USER: z.string(),
     METRICS_API_PASSWORD: z.string(),
     RESEND_API_KEY: z.string().optional(),

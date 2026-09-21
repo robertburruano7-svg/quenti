@@ -23,6 +23,13 @@ The optional services are the only way to spend money here, and the app runs
 without all of them. See the table at the end of this document for what each one
 switches on.
 
+## Running it locally instead
+
+To open the app without deploying anything, see
+[Running Locally](./README.md#running-locally) in the README. Google credentials
+are optional outside production and sign-in uses a magic link printed to the
+terminal, so a local instance needs no accounts at all.
+
 ## Node version
 
 The build requires **Node 20 or newer**. There is no upper bound: the import
